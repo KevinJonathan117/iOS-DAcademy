@@ -19,6 +19,7 @@ class MoreController: UIViewController {
     
     @IBAction func logoutOnClick(_ sender: UIButton) {
         currentLogin.removeKeyForLogin(key: "username")
+        navigationController?.popViewController(animated: true)
     }
     
     /*
