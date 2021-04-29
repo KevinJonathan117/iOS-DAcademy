@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DMH-9e-aNR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--More-->
+        <scene sceneID="xI9-LU-HxK">
+            <objects>
+                <viewController id="Z66-Lk-xfA" customClass="MoreController" customModule="DAcademy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MP3-UN-j7n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aR-e4-4pY">
+                                <rect key="frame" x="183" y="433" width="48" height="30"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutOnClick:" destination="Z66-Lk-xfA" eventType="touchUpInside" id="Htr-0r-gmN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1BH-so-YRk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2aR-e4-4pY" firstAttribute="centerX" secondItem="MP3-UN-j7n" secondAttribute="centerX" id="Uhm-Qo-p9t"/>
+                            <constraint firstItem="2aR-e4-4pY" firstAttribute="centerY" secondItem="MP3-UN-j7n" secondAttribute="centerY" id="cZw-hB-y3C"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="More" id="cx2-CI-srj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pYs-fZ-wJD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3642.0289855072465" y="825.66964285714278"/>
+        </scene>
+        <!--More-->
+        <scene sceneID="PW7-m4-Iz7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DMH-9e-aNR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="More" image="ellipsis.circle.fill" catalog="system" id="xYQ-0k-xlb"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="lTK-5z-WDf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Z66-Lk-xfA" kind="relationship" relationship="rootViewController" id="0EI-Us-B4l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ASN-KG-Xib" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2731.8840579710145" y="825.66964285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ellipsis.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

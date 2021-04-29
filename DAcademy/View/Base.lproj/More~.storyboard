@@ -93,6 +93,37 @@
             </objects>
             <point key="canvasLocation" x="947.69230769230762" y="93.127962085308056"/>
         </scene>
+        <!--More-->
+        <scene sceneID="xI9-LU-HxK">
+            <objects>
+                <viewController id="Z66-Lk-xfA" customClass="MoreController" customModule="DAcademy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MP3-UN-j7n">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aR-e4-4pY">
+                                <rect key="frame" x="171" y="407" width="48" height="30"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutOnClick:" destination="Z66-Lk-xfA" eventType="touchUpInside" id="Htr-0r-gmN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1BH-so-YRk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2aR-e4-4pY" firstAttribute="centerX" secondItem="MP3-UN-j7n" secondAttribute="centerX" id="Uhm-Qo-p9t"/>
+                            <constraint firstItem="2aR-e4-4pY" firstAttribute="centerY" secondItem="MP3-UN-j7n" secondAttribute="centerY" id="cZw-hB-y3C"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="More" image="ellipsis.circle.fill" catalog="system" id="xYQ-0k-xlb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pYs-fZ-wJD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2732" y="826"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hZ6-ky-zlm">
             <objects>
@@ -107,7 +138,7 @@
                     <connections>
                         <segue destination="cVn-rB-yTY" kind="relationship" relationship="viewControllers" id="gJv-Dl-1jL"/>
                         <segue destination="aD2-6K-PHa" kind="relationship" relationship="viewControllers" id="Gem-dH-lNv"/>
-                        <segue destination="RQ9-Lb-p7B" kind="relationship" relationship="viewControllers" id="emo-88-zge"/>
+                        <segue destination="Z66-Lk-xfA" kind="relationship" relationship="viewControllers" id="emo-88-zge"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ED4-x0-Xo0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -152,23 +183,17 @@
             </objects>
             <point key="canvasLocation" x="2968" y="93"/>
         </scene>
-        <!--More-->
-        <scene sceneID="Mh1-Vr-1bW">
-            <objects>
-                <viewControllerPlaceholder storyboardName="More" id="RQ9-Lb-p7B" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Qh7-Mm-LoU"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AOh-gG-RU0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2732" y="826"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="ellipsis.circle.fill" catalog="system" width="128" height="121"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

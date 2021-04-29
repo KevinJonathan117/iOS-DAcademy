@@ -1,5 +1,5 @@
 //
-//  MoreController.swift
+//  LearnersController.swift
 //  DAcademy
 //
 //  Created by Kevin Jonathan on 29/04/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MoreController: UIViewController {
+class LearnersController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,10 +15,7 @@ class MoreController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func logoutOnClick(_ sender: UIButton) {
-        currentLogin.removeKeyForLogin(key: "username")
-    }
-    
+
     /*
     // MARK: - Navigation
 

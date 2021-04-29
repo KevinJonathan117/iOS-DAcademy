@@ -17,7 +17,7 @@ class LoginController: UIViewController {
         super.viewDidLoad()
         
         loginButton.layer.cornerRadius = 8
-        if currentLogin.getStatusForLogin(key: "username") == true {
+        if currentLogin.getStatusForLogin(key: "username") {
             self.performSegue(withIdentifier: "toHome", sender: self)
         } 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector (LoginController.DismissKeyboard))

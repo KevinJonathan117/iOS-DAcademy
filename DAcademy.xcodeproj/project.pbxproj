@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5D7230F8263AB5CD006D5B0B /* MoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7230F7263AB5CD006D5B0B /* MoreController.swift */; };
+		5D7230FB263AB954006D5B0B /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D7230F9263AB954006D5B0B /* Timeline.storyboard */; };
+		5D7230FD263AB9AF006D5B0B /* Learners.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D7230FC263AB9AF006D5B0B /* Learners.storyboard */; };
+		5D723100263AB9C6006D5B0B /* More.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D7230FE263AB9C6006D5B0B /* More.storyboard */; };
+		5D723102263ABBB5006D5B0B /* LearnersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D723101263ABBB5006D5B0B /* LearnersController.swift */; };
+		5D723104263ABBC7006D5B0B /* TimelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D723103263ABBC7006D5B0B /* TimelineController.swift */; };
 		5DF527FF263AA41E0001A1AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF527FE263AA41E0001A1AF /* AppDelegate.swift */; };
 		5DF52801263AA41E0001A1AF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF52800263AA41E0001A1AF /* SceneDelegate.swift */; };
 		5DF52806263AA41E0001A1AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF52804263AA41E0001A1AF /* Main.storyboard */; };
@@ -19,6 +24,11 @@
 
 /* Begin PBXFileReference section */
 		5D7230F7263AB5CD006D5B0B /* MoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreController.swift; sourceTree = "<group>"; };
+		5D7230FA263AB954006D5B0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DAcademy/View/Base.lproj/Timeline.storyboard; sourceTree = "<group>"; };
+		5D7230FC263AB9AF006D5B0B /* Learners.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Learners.storyboard; sourceTree = "<group>"; };
+		5D7230FF263AB9C6006D5B0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DAcademy/View/Base.lproj/More.storyboard; sourceTree = "<group>"; };
+		5D723101263ABBB5006D5B0B /* LearnersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnersController.swift; sourceTree = "<group>"; };
+		5D723103263ABBC7006D5B0B /* TimelineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineController.swift; sourceTree = "<group>"; };
 		5DF527FB263AA41E0001A1AF /* DAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF527FE263AA41E0001A1AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DF52800263AA41E0001A1AF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +94,9 @@
 			isa = PBXGroup;
 			children = (
 				5DF52804263AA41E0001A1AF /* Main.storyboard */,
+				5D7230F9263AB954006D5B0B /* Timeline.storyboard */,
+				5D7230FC263AB9AF006D5B0B /* Learners.storyboard */,
+				5D7230FE263AB9C6006D5B0B /* More.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -92,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				5DF52817263AADBD0001A1AF /* LoginController.swift */,
+				5D723103263ABBC7006D5B0B /* TimelineController.swift */,
+				5D723101263ABBB5006D5B0B /* LearnersController.swift */,
 				5D7230F7263AB5CD006D5B0B /* MoreController.swift */,
 			);
 			path = Controller;
@@ -154,7 +169,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D7230FD263AB9AF006D5B0B /* Learners.storyboard in Resources */,
+				5D723100263AB9C6006D5B0B /* More.storyboard in Resources */,
 				5DF5280B263AA41F0001A1AF /* LaunchScreen.storyboard in Resources */,
+				5D7230FB263AB954006D5B0B /* Timeline.storyboard in Resources */,
 				5DF52808263AA41F0001A1AF /* Assets.xcassets in Resources */,
 				5DF52806263AA41E0001A1AF /* Main.storyboard in Resources */,
 			);
@@ -167,7 +185,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D723104263ABBC7006D5B0B /* TimelineController.swift in Sources */,
 				5D7230F8263AB5CD006D5B0B /* MoreController.swift in Sources */,
+				5D723102263ABBB5006D5B0B /* LearnersController.swift in Sources */,
 				5DF52816263AAADC0001A1AF /* CurrentLogin.swift in Sources */,
 				5DF52818263AADBD0001A1AF /* LoginController.swift in Sources */,
 				5DF527FF263AA41E0001A1AF /* AppDelegate.swift in Sources */,
@@ -178,6 +198,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		5D7230F9263AB954006D5B0B /* Timeline.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D7230FA263AB954006D5B0B /* Base */,
+			);
+			name = Timeline.storyboard;
+			sourceTree = "<group>";
+		};
+		5D7230FE263AB9C6006D5B0B /* More.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D7230FF263AB9C6006D5B0B /* Base */,
+			);
+			name = More.storyboard;
+			sourceTree = "<group>";
+		};
 		5DF52804263AA41E0001A1AF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
