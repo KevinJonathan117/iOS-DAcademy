@@ -14,10 +14,10 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var domainExpertCollectionView: UICollectionView!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == designCollectionView {
-            return 20
+            return 25
         }
         if collectionView == domainExpertCollectionView {
-            return 10
+            return 5
         }
         return 70
     }
