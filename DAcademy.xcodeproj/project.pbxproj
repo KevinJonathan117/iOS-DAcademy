@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D6A888B263C12BC005E1CCA /* TechCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A888A263C12BC005E1CCA /* TechCollectionViewCell.swift */; };
+		5D6A888E263C12DB005E1CCA /* DesignCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A888D263C12DB005E1CCA /* DesignCollectionViewCell.swift */; };
+		5D6A8890263C12F4005E1CCA /* DomainExpertCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A888F263C12F4005E1CCA /* DomainExpertCollectionViewCell.swift */; };
 		5D7230F8263AB5CD006D5B0B /* MoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7230F7263AB5CD006D5B0B /* MoreController.swift */; };
 		5D7230FB263AB954006D5B0B /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D7230F9263AB954006D5B0B /* Timeline.storyboard */; };
 		5D7230FD263AB9AF006D5B0B /* Learners.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D7230FC263AB9AF006D5B0B /* Learners.storyboard */; };
@@ -23,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D6A888A263C12BC005E1CCA /* TechCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechCollectionViewCell.swift; sourceTree = "<group>"; };
+		5D6A888D263C12DB005E1CCA /* DesignCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCollectionViewCell.swift; sourceTree = "<group>"; };
+		5D6A888F263C12F4005E1CCA /* DomainExpertCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainExpertCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D7230F7263AB5CD006D5B0B /* MoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreController.swift; sourceTree = "<group>"; };
 		5D7230FA263AB954006D5B0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DAcademy/View/Base.lproj/Timeline.storyboard; sourceTree = "<group>"; };
 		5D7230FC263AB9AF006D5B0B /* Learners.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Learners.storyboard; sourceTree = "<group>"; };
@@ -51,6 +57,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D6A8888263C1271005E1CCA /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				5D6A888A263C12BC005E1CCA /* TechCollectionViewCell.swift */,
+				5D6A888D263C12DB005E1CCA /* DesignCollectionViewCell.swift */,
+				5D6A888F263C12F4005E1CCA /* DomainExpertCollectionViewCell.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		5D6A8889263C127A005E1CCA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5DF52817263AADBD0001A1AF /* LoginController.swift */,
+				5D723103263ABBC7006D5B0B /* TimelineController.swift */,
+				5D723101263ABBB5006D5B0B /* LearnersController.swift */,
+				5D7230F7263AB5CD006D5B0B /* MoreController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		5DF527F2263AA41E0001A1AF = {
 			isa = PBXGroup;
 			children = (
@@ -104,10 +131,8 @@
 		5DF52814263AA9880001A1AF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5DF52817263AADBD0001A1AF /* LoginController.swift */,
-				5D723103263ABBC7006D5B0B /* TimelineController.swift */,
-				5D723101263ABBB5006D5B0B /* LearnersController.swift */,
-				5D7230F7263AB5CD006D5B0B /* MoreController.swift */,
+				5D6A8888263C1271005E1CCA /* CollectionView */,
+				5D6A8889263C127A005E1CCA /* ViewController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -185,10 +210,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D6A8890263C12F4005E1CCA /* DomainExpertCollectionViewCell.swift in Sources */,
 				5D723104263ABBC7006D5B0B /* TimelineController.swift in Sources */,
 				5D7230F8263AB5CD006D5B0B /* MoreController.swift in Sources */,
+				5D6A888B263C12BC005E1CCA /* TechCollectionViewCell.swift in Sources */,
 				5D723102263ABBB5006D5B0B /* LearnersController.swift in Sources */,
 				5DF52816263AAADC0001A1AF /* CurrentLogin.swift in Sources */,
+				5D6A888E263C12DB005E1CCA /* DesignCollectionViewCell.swift in Sources */,
 				5DF52818263AADBD0001A1AF /* LoginController.swift in Sources */,
 				5DF527FF263AA41E0001A1AF /* AppDelegate.swift in Sources */,
 				5DF52801263AA41E0001A1AF /* SceneDelegate.swift in Sources */,
