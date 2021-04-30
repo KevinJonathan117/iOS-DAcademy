@@ -112,6 +112,10 @@
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="SYT-wl-DoO" id="Rb8-I0-Tj1"/>
+                                            <outlet property="delegate" destination="SYT-wl-DoO" id="F8L-zd-osL"/>
+                                        </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Domain Expert" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yb7-ez-j2Z">
                                         <rect key="frame" x="20" y="467.66666666666663" width="350" height="25.333333333333314"/>
@@ -156,6 +160,10 @@
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="SYT-wl-DoO" id="UwS-Le-nxa"/>
+                                            <outlet property="delegate" destination="SYT-wl-DoO" id="s5N-ER-O61"/>
+                                        </connections>
                                     </collectionView>
                                 </subviews>
                                 <constraints>
@@ -178,7 +186,7 @@
                                     <constraint firstItem="mb6-PO-v9F" firstAttribute="trailing" secondItem="nVH-7U-1wb" secondAttribute="trailing" constant="20" id="jok-YL-h8v"/>
                                     <constraint firstItem="pMO-1t-N7F" firstAttribute="leading" secondItem="mb6-PO-v9F" secondAttribute="leading" constant="20" id="mtQ-tV-OWI"/>
                                     <constraint firstItem="mb6-PO-v9F" firstAttribute="trailing" secondItem="pMO-1t-N7F" secondAttribute="trailing" constant="20" id="uqc-eu-qpf"/>
-                                    <constraint firstAttribute="bottom" secondItem="nVH-7U-1wb" secondAttribute="bottom" constant="85" id="w0m-Fo-jyp"/>
+                                    <constraint firstAttribute="bottom" secondItem="nVH-7U-1wb" secondAttribute="bottom" constant="20" id="w0m-Fo-jyp"/>
                                     <constraint firstItem="mkU-sg-eKt" firstAttribute="leading" secondItem="hNu-nG-1k1" secondAttribute="leading" constant="20" id="wXl-D9-05h"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="6Oz-bu-Lsx"/>
@@ -195,6 +203,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Learners" id="AWd-NZ-t2C"/>
+                    <connections>
+                        <outlet property="designCollectionView" destination="9ay-jl-r3n" id="HhM-Zn-Wzb"/>
+                        <outlet property="domainExpertCollectionView" destination="nVH-7U-1wb" id="FAA-40-IfL"/>
+                        <outlet property="techCollectionView" destination="pMO-1t-N7F" id="s5W-QF-wLt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d53-u6-Ufb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
