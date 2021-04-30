@@ -17,6 +17,11 @@ class MoreController: UIViewController {
     
     @IBAction func logoutOnClick(_ sender: UIButton) {
         currentLogin.removeKeyForLogin(key: "username")
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "loginScreen") as! LoginController
+        newViewController.modalPresentationStyle = .fullScreen
+        self.present(newViewController, animated: true, completion: nil)
     }
     
     /*
