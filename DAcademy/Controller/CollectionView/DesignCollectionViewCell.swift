@@ -8,5 +8,6 @@
 import UIKit
 
 class DesignCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var designText: UILabel!
+    @IBOutlet weak var designImage: UIImageView!
+    @IBOutlet weak var designLabel: UILabel!
 }

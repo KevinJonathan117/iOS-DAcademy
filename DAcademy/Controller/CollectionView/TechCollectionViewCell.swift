@@ -8,5 +8,6 @@
 import UIKit
 
 class TechCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var techText: UILabel!
+    @IBOutlet weak var techImage: UIImageView!
+    @IBOutlet weak var techLabel: UILabel!
 }

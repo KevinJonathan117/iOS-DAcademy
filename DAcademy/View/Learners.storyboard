@@ -46,21 +46,32 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="154"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tech" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJF-un-ELh">
-                                                            <rect key="frame" x="45.666666666666657" y="66.666666666666671" width="37" height="21"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0if-6v-nha">
+                                                            <rect key="frame" x="10" y="10" width="108" height="100"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="100" id="XIl-MU-HGn"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAB-xO-X6b">
+                                                            <rect key="frame" x="10" y="119.99999999999999" width="108" height="20.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="gJF-un-ELh" firstAttribute="centerY" secondItem="IQ1-Ey-z3Y" secondAttribute="centerY" id="6iG-Q0-qfV"/>
-                                                        <constraint firstItem="gJF-un-ELh" firstAttribute="centerX" secondItem="IQ1-Ey-z3Y" secondAttribute="centerX" id="BbK-mr-HkT"/>
+                                                        <constraint firstItem="0if-6v-nha" firstAttribute="top" secondItem="IQ1-Ey-z3Y" secondAttribute="top" constant="10" id="1dl-7e-I1u"/>
+                                                        <constraint firstItem="JAB-xO-X6b" firstAttribute="leading" secondItem="IQ1-Ey-z3Y" secondAttribute="leading" constant="10" id="Dss-Re-iNt"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0if-6v-nha" secondAttribute="trailing" constant="10" id="gVd-ZU-9Mt"/>
+                                                        <constraint firstItem="JAB-xO-X6b" firstAttribute="top" secondItem="0if-6v-nha" secondAttribute="bottom" constant="10" id="hcY-69-ZdK"/>
+                                                        <constraint firstItem="0if-6v-nha" firstAttribute="leading" secondItem="IQ1-Ey-z3Y" secondAttribute="leading" constant="10" id="k9P-8l-HTO"/>
+                                                        <constraint firstAttribute="trailing" secondItem="JAB-xO-X6b" secondAttribute="trailing" constant="10" id="rkF-Iz-cBo"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="128" height="154"/>
                                                 <connections>
-                                                    <outlet property="techText" destination="gJF-un-ELh" id="wRL-19-Cr6"/>
+                                                    <outlet property="techImage" destination="0if-6v-nha" id="fF1-m3-AnT"/>
+                                                    <outlet property="techLabel" destination="JAB-xO-X6b" id="HvT-4x-Xtl"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -95,21 +106,32 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="154"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Design" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYe-uZ-J8U">
-                                                            <rect key="frame" x="37.666666666666657" y="66.666666666666671" width="53" height="21"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hps-ok-Ocv">
+                                                            <rect key="frame" x="10" y="10" width="108" height="100"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="100" id="i7Q-18-fyC"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lL-is-dqO">
+                                                            <rect key="frame" x="10" y="119.99999999999999" width="108" height="20.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="EYe-uZ-J8U" firstAttribute="centerX" secondItem="KeD-SL-CaY" secondAttribute="centerX" id="BiE-gh-szm"/>
-                                                        <constraint firstItem="EYe-uZ-J8U" firstAttribute="centerY" secondItem="KeD-SL-CaY" secondAttribute="centerY" id="eqC-l3-FLn"/>
+                                                        <constraint firstItem="4lL-is-dqO" firstAttribute="leading" secondItem="KeD-SL-CaY" secondAttribute="leading" constant="10" id="Bek-K4-BrV"/>
+                                                        <constraint firstItem="Hps-ok-Ocv" firstAttribute="top" secondItem="KeD-SL-CaY" secondAttribute="top" constant="10" id="JAV-J2-PZn"/>
+                                                        <constraint firstItem="Hps-ok-Ocv" firstAttribute="leading" secondItem="KeD-SL-CaY" secondAttribute="leading" constant="10" id="a2P-cI-kl6"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Hps-ok-Ocv" secondAttribute="trailing" constant="10" id="edc-em-2Sh"/>
+                                                        <constraint firstItem="4lL-is-dqO" firstAttribute="top" secondItem="Hps-ok-Ocv" secondAttribute="bottom" constant="10" id="kaw-0D-Wk3"/>
+                                                        <constraint firstAttribute="trailing" secondItem="4lL-is-dqO" secondAttribute="trailing" constant="10" id="uUj-nf-BeT"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="128" height="154"/>
                                                 <connections>
-                                                    <outlet property="designText" destination="EYe-uZ-J8U" id="eSs-I1-fT1"/>
+                                                    <outlet property="designImage" destination="Hps-ok-Ocv" id="Gwl-cb-lkW"/>
+                                                    <outlet property="designLabel" destination="4lL-is-dqO" id="Dqk-F4-zac"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -144,21 +166,32 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="154"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Domain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53t-46-hrq">
-                                                            <rect key="frame" x="34.666666666666671" y="66.666666666666671" width="58.666666666666671" height="21"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5RE-8y-gNh">
+                                                            <rect key="frame" x="10" y="10" width="108" height="100"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="100" id="VQf-nj-YW3"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmt-te-K7H">
+                                                            <rect key="frame" x="10" y="119.99999999999999" width="108" height="20.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="53t-46-hrq" firstAttribute="centerY" secondItem="Z2D-LD-DwF" secondAttribute="centerY" id="MAA-fU-sWb"/>
-                                                        <constraint firstItem="53t-46-hrq" firstAttribute="centerX" secondItem="Z2D-LD-DwF" secondAttribute="centerX" id="cCo-sx-Ix3"/>
+                                                        <constraint firstAttribute="trailing" secondItem="5RE-8y-gNh" secondAttribute="trailing" constant="10" id="4ax-xR-a2M"/>
+                                                        <constraint firstItem="5RE-8y-gNh" firstAttribute="top" secondItem="Z2D-LD-DwF" secondAttribute="top" constant="10" id="AYk-tq-9kj"/>
+                                                        <constraint firstItem="Cmt-te-K7H" firstAttribute="leading" secondItem="Z2D-LD-DwF" secondAttribute="leading" constant="10" id="C52-wq-NLm"/>
+                                                        <constraint firstItem="Cmt-te-K7H" firstAttribute="top" secondItem="5RE-8y-gNh" secondAttribute="bottom" constant="10" id="Lyf-OQ-2EK"/>
+                                                        <constraint firstItem="5RE-8y-gNh" firstAttribute="leading" secondItem="Z2D-LD-DwF" secondAttribute="leading" constant="10" id="WFF-BM-b8Z"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Cmt-te-K7H" secondAttribute="trailing" constant="10" id="cah-48-SjB"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="128" height="154"/>
                                                 <connections>
-                                                    <outlet property="domainText" destination="53t-46-hrq" id="ljk-TU-SlL"/>
+                                                    <outlet property="domainImage" destination="5RE-8y-gNh" id="QK0-Cx-nkl"/>
+                                                    <outlet property="domainLabel" destination="Cmt-te-K7H" id="dvA-A3-1be"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>

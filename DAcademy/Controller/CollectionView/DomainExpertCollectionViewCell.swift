@@ -8,5 +8,6 @@
 import UIKit
 
 class DomainExpertCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var domainText: UILabel!
+    @IBOutlet weak var domainImage: UIImageView!
+    @IBOutlet weak var domainLabel: UILabel!
 }
