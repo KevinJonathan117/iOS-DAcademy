@@ -9,13 +9,17 @@ import UIKit
 
 class LearnersController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var scrollViewLearners: UIScrollView!
     @IBOutlet weak var techCollectionView: UICollectionView!
     @IBOutlet weak var designCollectionView: UICollectionView!
     @IBOutlet weak var domainExpertCollectionView: UICollectionView!
     
+    let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
+    
     var learnerDatabase = [Learner]()
     var learnerNames = [String]()
     var learnerPhotos = [String]()
+    var learnerExpertises = [String]()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == designCollectionView {
@@ -51,26 +55,26 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
             techCell.techLabel.text = learnerNames[indexPath.item]
             if let data = try? Data(contentsOf: url!) {
                 techCell.techImage.image = UIImage(data: data)
-                techCell.techImage.layer.cornerRadius = 8
+                techCell.techImage.layer.cornerRadius = 12
             }
             //techCell.techImage.image = UIImage(named: learnerPhotos[indexPath.item])
             
-            if(collectionView == designCollectionView) {
+            if(collectionView == designCollectionView && learnerExpertises[indexPath.item] == "Design") {
                 let designCell = designCollectionView.dequeueReusableCell(withReuseIdentifier: "designCell", for: indexPath) as! DesignCollectionViewCell
                 designCell.designLabel.text = learnerNames[indexPath.item]
                 if let data = try? Data(contentsOf: url!) {
                     designCell.designImage.image = UIImage(data: data)
-                    designCell.designImage.layer.cornerRadius = 8
+                    designCell.designImage.layer.cornerRadius = 12
                 }
                 
                 return designCell
             }
-            if(collectionView == domainExpertCollectionView) {
+            if(collectionView == domainExpertCollectionView && learnerExpertises[indexPath.item] == "Domain Expert (Keahlian Khusus)") {
                 let domainCell = domainExpertCollectionView.dequeueReusableCell(withReuseIdentifier: "domainCell", for: indexPath) as! DomainExpertCollectionViewCell
                 domainCell.domainLabel.text = learnerNames[indexPath.item]
                 if let data = try? Data(contentsOf: url!) {
                     domainCell.domainImage.image = UIImage(data: data)
-                    domainCell.domainImage.layer.cornerRadius = 8
+                    domainCell.domainImage.layer.cornerRadius = 12
                 }
                 
                 return domainCell
@@ -85,7 +89,16 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollViewLearners.alpha = 0
+        showActivityIndicatory()
         APICall()
+    }
+    
+    func showActivityIndicatory() {
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
     }
     
     func APICall() {
@@ -121,10 +134,15 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
                         self.learnerDatabase.append(learner)
                         self.learnerNames.append(decodeData.results[i].Name)
                         self.learnerPhotos.append(decodeData.results[i].Photo)
+                        self.learnerExpertises.append(decodeData.results[i].Expertise)
                     }
                     self.techCollectionView.reloadData()
                     self.designCollectionView.reloadData()
                     self.domainExpertCollectionView.reloadData()
+                    self.activityIndicator.stopAnimating()
+                    UIView.animate(withDuration: 1) {
+                        self.scrollViewLearners.alpha = 1
+                    }
                 }
             } catch {
                 print(error)
