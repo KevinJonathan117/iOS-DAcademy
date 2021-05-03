@@ -14,6 +14,8 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var domainExpertCollectionView: UICollectionView!
     
     var learnerDatabase = [Learner]()
+    var learnerNames = [String]()
+    var learnerPhotos = [String]()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == designCollectionView {
@@ -27,22 +29,55 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let techCell = techCollectionView.dequeueReusableCell(withReuseIdentifier: "techCell", for: indexPath) as! TechCollectionViewCell
-        techCell.techLabel.text = "Tech \(indexPath.item)"
-        
-        if(collectionView == designCollectionView) {
-            let designCell = designCollectionView.dequeueReusableCell(withReuseIdentifier: "designCell", for: indexPath) as! DesignCollectionViewCell
-            designCell.designLabel.text = "Design \(indexPath.item)"
+        if learnerDatabase.count == 0 {
+            techCell.techLabel.text = "Loading..."
             
-            return designCell
-        }
-        if(collectionView == domainExpertCollectionView) {
-            let domainCell = domainExpertCollectionView.dequeueReusableCell(withReuseIdentifier: "domainCell", for: indexPath) as! DomainExpertCollectionViewCell
-            domainCell.domainLabel.text = "Domain \(indexPath.item)"
+            if(collectionView == designCollectionView) {
+                let designCell = designCollectionView.dequeueReusableCell(withReuseIdentifier: "designCell", for: indexPath) as! DesignCollectionViewCell
+                designCell.designLabel.text = "Loading..."
+                
+                return designCell
+            }
+            if(collectionView == domainExpertCollectionView) {
+                let domainCell = domainExpertCollectionView.dequeueReusableCell(withReuseIdentifier: "domainCell", for: indexPath) as! DomainExpertCollectionViewCell
+                domainCell.domainLabel.text = "Loading..."
+                
+                return domainCell
+            }
             
-            return domainCell
+            return techCell
+        } else {
+            let url = URL(string: learnerPhotos[indexPath.item])
+            techCell.techLabel.text = learnerNames[indexPath.item]
+            if let data = try? Data(contentsOf: url!) {
+                techCell.techImage.image = UIImage(data: data)
+                techCell.techImage.layer.cornerRadius = 8
+            }
+            //techCell.techImage.image = UIImage(named: learnerPhotos[indexPath.item])
+            
+            if(collectionView == designCollectionView) {
+                let designCell = designCollectionView.dequeueReusableCell(withReuseIdentifier: "designCell", for: indexPath) as! DesignCollectionViewCell
+                designCell.designLabel.text = learnerNames[indexPath.item]
+                if let data = try? Data(contentsOf: url!) {
+                    designCell.designImage.image = UIImage(data: data)
+                    designCell.designImage.layer.cornerRadius = 8
+                }
+                
+                return designCell
+            }
+            if(collectionView == domainExpertCollectionView) {
+                let domainCell = domainExpertCollectionView.dequeueReusableCell(withReuseIdentifier: "domainCell", for: indexPath) as! DomainExpertCollectionViewCell
+                domainCell.domainLabel.text = learnerNames[indexPath.item]
+                if let data = try? Data(contentsOf: url!) {
+                    domainCell.domainImage.image = UIImage(data: data)
+                    domainCell.domainImage.layer.cornerRadius = 8
+                }
+                
+                return domainCell
+            }
+            
+            return techCell
         }
-        
-        return techCell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     }
@@ -82,11 +117,14 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
                 DispatchQueue.main.async {
                     for i in 0...110 {
                         let learner = Learner(name: String(decodeData.results[i].Name), photo: String(decodeData.results[i].Photo), expertise: String(decodeData.results[i].Expertise), team: String(decodeData.results[i].Team), shift: String(decodeData.results[i].Shift))
+
                         self.learnerDatabase.append(learner)
+                        self.learnerNames.append(decodeData.results[i].Name)
+                        self.learnerPhotos.append(decodeData.results[i].Photo)
                     }
-                    /*self.techCollectionView.reloadData()
+                    self.techCollectionView.reloadData()
                     self.designCollectionView.reloadData()
-                    self.domainExpertCollectionView.reloadData()*/
+                    self.domainExpertCollectionView.reloadData()
                 }
             } catch {
                 print(error)
