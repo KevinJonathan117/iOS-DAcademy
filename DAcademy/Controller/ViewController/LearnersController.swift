@@ -16,10 +16,9 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
     
     let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
     
-    var learnerDatabase = [Learner]()
-    var learnerNames = [String]()
-    var learnerPhotos = [String]()
-    var learnerExpertises = [String]()
+    var techLearnerDatabase = [Learner]()
+    var designLearnerDatabase = [Learner]()
+    var domainLearnerDatabase = [Learner]()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == designCollectionView {
@@ -33,42 +32,52 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let techCell = techCollectionView.dequeueReusableCell(withReuseIdentifier: "techCell", for: indexPath) as! TechCollectionViewCell
-        if learnerDatabase.count == 0 {
+        if techLearnerDatabase.count == 0 && designLearnerDatabase.count == 0 && domainLearnerDatabase.count == 0 {
             return techCell
         } else {
-            let url = URL(string: learnerPhotos[indexPath.item])
-            techCell.techLabel.text = learnerNames[indexPath.item]
-            if let data = try? Data(contentsOf: url!) {
-                techCell.techImage.image = UIImage(data: data)
-                techCell.techImage.layer.cornerRadius = 12
-            }
-            //techCell.techImage.image = UIImage(named: learnerPhotos[indexPath.item])
-            
-            if(collectionView == designCollectionView && learnerExpertises[indexPath.item] == "Design") {
-                let designCell = designCollectionView.dequeueReusableCell(withReuseIdentifier: "designCell", for: indexPath) as! DesignCollectionViewCell
-                designCell.designLabel.text = learnerNames[indexPath.item]
+            if(collectionView == techCollectionView) {
+                let url = URL(string: techLearnerDatabase[indexPath.item].photo)
+                techCell.techLabel.text = techLearnerDatabase[indexPath.item].name
                 if let data = try? Data(contentsOf: url!) {
-                    designCell.designImage.image = UIImage(data: data)
-                    designCell.designImage.layer.cornerRadius = 12
+                    techCell.techImage.image = UIImage(data: data)
+                    techCell.techImage.layer.cornerRadius = 12
                 }
-                
-                return designCell
-            }
-            if(collectionView == domainExpertCollectionView && learnerExpertises[indexPath.item] == "Domain Expert (Keahlian Khusus)") {
-                let domainCell = domainExpertCollectionView.dequeueReusableCell(withReuseIdentifier: "domainCell", for: indexPath) as! DomainExpertCollectionViewCell
-                domainCell.domainLabel.text = learnerNames[indexPath.item]
-                if let data = try? Data(contentsOf: url!) {
-                    domainCell.domainImage.image = UIImage(data: data)
-                    domainCell.domainImage.layer.cornerRadius = 12
-                }
-                
-                return domainCell
             }
             
+            if indexPath.item < designLearnerDatabase.count {
+                if(collectionView == designCollectionView) {
+                    let designCell = designCollectionView.dequeueReusableCell(withReuseIdentifier: "designCell", for: indexPath) as! DesignCollectionViewCell
+                    
+                    let url = URL(string: designLearnerDatabase[indexPath.item].photo)
+                    designCell.designLabel.text = designLearnerDatabase[indexPath.item].name
+                    if let data = try? Data(contentsOf: url!) {
+                        designCell.designImage.image = UIImage(data: data)
+                        designCell.designImage.layer.cornerRadius = 12
+                    }
+                    
+                    return designCell
+                }
+            }
+            
+            if indexPath.item < domainLearnerDatabase.count {
+                if(collectionView == domainExpertCollectionView) {
+                    let domainCell = domainExpertCollectionView.dequeueReusableCell(withReuseIdentifier: "domainCell", for: indexPath) as! DomainExpertCollectionViewCell
+                    
+                    let url = URL(string: domainLearnerDatabase[indexPath.item].photo)
+                    domainCell.domainLabel.text = domainLearnerDatabase[indexPath.item].name
+                    if let data = try? Data(contentsOf: url!) {
+                        domainCell.domainImage.image = UIImage(data: data)
+                        domainCell.domainImage.layer.cornerRadius = 12
+                    }
+                    
+                    return domainCell
+                }
+            }
             return techCell
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toLearnerDetail", sender: self)
     }
     
 
@@ -116,10 +125,13 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
                     for i in 0...110 {
                         let learner = Learner(name: String(decodeData.results[i].Name), photo: String(decodeData.results[i].Photo), expertise: String(decodeData.results[i].Expertise), team: String(decodeData.results[i].Team), shift: String(decodeData.results[i].Shift))
 
-                        self.learnerDatabase.append(learner)
-                        self.learnerNames.append(decodeData.results[i].Name)
-                        self.learnerPhotos.append(decodeData.results[i].Photo)
-                        self.learnerExpertises.append(decodeData.results[i].Expertise)
+                        if learner.expertise == "Tech / IT / IS" {
+                            self.techLearnerDatabase.append(learner)
+                        } else if learner.expertise == "Design" {
+                            self.designLearnerDatabase.append(learner)
+                        } else if learner.expertise == "Domain Expert (Keahlian Khusus)" {
+                            self.domainLearnerDatabase.append(learner)
+                        }
                     }
                     self.techCollectionView.reloadData()
                     self.designCollectionView.reloadData()

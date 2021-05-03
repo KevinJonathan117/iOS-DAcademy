@@ -11,6 +11,7 @@
 		5D6A888E263C12DB005E1CCA /* DesignCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A888D263C12DB005E1CCA /* DesignCollectionViewCell.swift */; };
 		5D6A8890263C12F4005E1CCA /* DomainExpertCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A888F263C12F4005E1CCA /* DomainExpertCollectionViewCell.swift */; };
 		5D6A8892263FD79D005E1CCA /* Learner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A8891263FD79D005E1CCA /* Learner.swift */; };
+		5D6A8894264007B9005E1CCA /* LearnerDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A8893264007B9005E1CCA /* LearnerDetailController.swift */; };
 		5D7230F8263AB5CD006D5B0B /* MoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7230F7263AB5CD006D5B0B /* MoreController.swift */; };
 		5D7230FB263AB954006D5B0B /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D7230F9263AB954006D5B0B /* Timeline.storyboard */; };
 		5D7230FD263AB9AF006D5B0B /* Learners.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D7230FC263AB9AF006D5B0B /* Learners.storyboard */; };
@@ -31,6 +32,7 @@
 		5D6A888D263C12DB005E1CCA /* DesignCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D6A888F263C12F4005E1CCA /* DomainExpertCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainExpertCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D6A8891263FD79D005E1CCA /* Learner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learner.swift; sourceTree = "<group>"; };
+		5D6A8893264007B9005E1CCA /* LearnerDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnerDetailController.swift; sourceTree = "<group>"; };
 		5D7230F7263AB5CD006D5B0B /* MoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreController.swift; sourceTree = "<group>"; };
 		5D7230FA263AB954006D5B0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DAcademy/View/Base.lproj/Timeline.storyboard; sourceTree = "<group>"; };
 		5D7230FC263AB9AF006D5B0B /* Learners.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Learners.storyboard; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				5D723103263ABBC7006D5B0B /* TimelineController.swift */,
 				5D723101263ABBB5006D5B0B /* LearnersController.swift */,
 				5D7230F7263AB5CD006D5B0B /* MoreController.swift */,
+				5D6A8893264007B9005E1CCA /* LearnerDetailController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D6A8894264007B9005E1CCA /* LearnerDetailController.swift in Sources */,
 				5D6A8890263C12F4005E1CCA /* DomainExpertCollectionViewCell.swift in Sources */,
 				5D723104263ABBC7006D5B0B /* TimelineController.swift in Sources */,
 				5D7230F8263AB5CD006D5B0B /* MoreController.swift in Sources */,

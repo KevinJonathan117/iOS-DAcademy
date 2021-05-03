@@ -243,11 +243,84 @@
                         <outlet property="domainExpertCollectionView" destination="nVH-7U-1wb" id="FAA-40-IfL"/>
                         <outlet property="scrollViewLearners" destination="hNu-nG-1k1" id="KYq-wI-lmg"/>
                         <outlet property="techCollectionView" destination="pMO-1t-N7F" id="s5W-QF-wLt"/>
+                        <segue destination="BOF-1e-6pP" kind="show" identifier="toLearnerDetail" id="MIw-En-9mA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d53-u6-Ufb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3875.3846153846152" y="91.706161137440759"/>
+        </scene>
+        <!--Learner Detail-->
+        <scene sceneID="bUr-uk-RSM">
+            <objects>
+                <viewController id="BOF-1e-6pP" customClass="LearnerDetailController" customModule="DAcademy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="geT-y8-zwU">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uds-kA-n6e">
+                                <rect key="frame" x="10" y="150" width="370" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="6bf-N8-HgL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yiz-2Y-CwC">
+                                <rect key="frame" x="10" y="449" width="370" height="26.333333333333314"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expertise" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCh-lT-cmg">
+                                <rect key="frame" x="10" y="420" width="370" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Q8-JL-ZgT">
+                                <rect key="frame" x="10" y="495.33333333333331" width="370" height="20.999999999999943"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0W-fk-tlo">
+                                <rect key="frame" x="10" y="536.33333333333337" width="370" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7jG-HI-oLu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7jG-HI-oLu" firstAttribute="trailing" secondItem="2Q8-JL-ZgT" secondAttribute="trailing" constant="10" id="Ckv-Dy-SpD"/>
+                            <constraint firstItem="Uds-kA-n6e" firstAttribute="leading" secondItem="7jG-HI-oLu" secondAttribute="leading" constant="10" id="EvD-Kx-8iv"/>
+                            <constraint firstItem="I0W-fk-tlo" firstAttribute="leading" secondItem="7jG-HI-oLu" secondAttribute="leading" constant="10" id="Jzh-vU-mC3"/>
+                            <constraint firstItem="7jG-HI-oLu" firstAttribute="trailing" secondItem="ZCh-lT-cmg" secondAttribute="trailing" constant="10" id="Pt5-FT-Lz3"/>
+                            <constraint firstItem="7jG-HI-oLu" firstAttribute="trailing" secondItem="Uds-kA-n6e" secondAttribute="trailing" constant="10" id="R8T-Sp-lrM"/>
+                            <constraint firstItem="Uds-kA-n6e" firstAttribute="top" secondItem="7jG-HI-oLu" secondAttribute="top" constant="10" id="TGu-e1-2SD"/>
+                            <constraint firstItem="ZCh-lT-cmg" firstAttribute="top" secondItem="Uds-kA-n6e" secondAttribute="bottom" constant="20" id="WgY-Wz-fCV"/>
+                            <constraint firstItem="2Q8-JL-ZgT" firstAttribute="leading" secondItem="7jG-HI-oLu" secondAttribute="leading" constant="10" id="aXa-tf-ocD"/>
+                            <constraint firstItem="I0W-fk-tlo" firstAttribute="top" secondItem="2Q8-JL-ZgT" secondAttribute="bottom" constant="20" id="aeO-KD-WoE"/>
+                            <constraint firstItem="7jG-HI-oLu" firstAttribute="trailing" secondItem="I0W-fk-tlo" secondAttribute="trailing" constant="10" id="dBx-1t-gvi"/>
+                            <constraint firstItem="Yiz-2Y-CwC" firstAttribute="top" secondItem="ZCh-lT-cmg" secondAttribute="bottom" constant="12" id="eA1-1e-Edo"/>
+                            <constraint firstItem="7jG-HI-oLu" firstAttribute="trailing" secondItem="Yiz-2Y-CwC" secondAttribute="trailing" constant="10" id="fiL-cU-F88"/>
+                            <constraint firstItem="ZCh-lT-cmg" firstAttribute="leading" secondItem="7jG-HI-oLu" secondAttribute="leading" constant="10" id="hbQ-aL-NOa"/>
+                            <constraint firstItem="2Q8-JL-ZgT" firstAttribute="top" secondItem="Yiz-2Y-CwC" secondAttribute="bottom" constant="20" id="mgN-fD-e9q"/>
+                            <constraint firstItem="Yiz-2Y-CwC" firstAttribute="leading" secondItem="7jG-HI-oLu" secondAttribute="leading" constant="10" id="yfL-7s-91h"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Learner Detail" id="Mue-ns-xEM"/>
+                    <connections>
+                        <outlet property="learnerExpertise" destination="ZCh-lT-cmg" id="ecw-ib-gjt"/>
+                        <outlet property="learnerImage" destination="Uds-kA-n6e" id="FOX-Tp-THf"/>
+                        <outlet property="learnerName" destination="Yiz-2Y-CwC" id="Z3p-QD-XLq"/>
+                        <outlet property="learnerShift" destination="2Q8-JL-ZgT" id="Roo-9l-Prv"/>
+                        <outlet property="learnerTeam" destination="I0W-fk-tlo" id="dS3-RC-Qpk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pu7-4k-VnB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4720" y="91.706161137440759"/>
         </scene>
         <!--Learners-->
         <scene sceneID="Vue-PG-Um4">
