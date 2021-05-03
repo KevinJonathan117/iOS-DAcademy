@@ -34,21 +34,6 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let techCell = techCollectionView.dequeueReusableCell(withReuseIdentifier: "techCell", for: indexPath) as! TechCollectionViewCell
         if learnerDatabase.count == 0 {
-            techCell.techLabel.text = "Loading..."
-            
-            if(collectionView == designCollectionView) {
-                let designCell = designCollectionView.dequeueReusableCell(withReuseIdentifier: "designCell", for: indexPath) as! DesignCollectionViewCell
-                designCell.designLabel.text = "Loading..."
-                
-                return designCell
-            }
-            if(collectionView == domainExpertCollectionView) {
-                let domainCell = domainExpertCollectionView.dequeueReusableCell(withReuseIdentifier: "domainCell", for: indexPath) as! DomainExpertCollectionViewCell
-                domainCell.domainLabel.text = "Loading..."
-                
-                return domainCell
-            }
-            
             return techCell
         } else {
             let url = URL(string: learnerPhotos[indexPath.item])
