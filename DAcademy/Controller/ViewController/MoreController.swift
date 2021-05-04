@@ -23,6 +23,9 @@ class MoreController: UIViewController {
 
 extension MoreController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            performSegue(withIdentifier: "toProfile", sender: self)
+        }
         if indexPath.section == 2 {
             currentLogin.removeKeyForLogin(key: "username")
             
@@ -57,15 +60,13 @@ extension MoreController: UITableViewDataSource {
             
             
             return cell
-        }
-        if indexPath.section == 1 {
+        } else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "academyGameCell", for: indexPath)
             
             cell.textLabel?.text = "Academy Game"
             
             return cell
-        }
-        if indexPath.section == 2 {
+        } else if indexPath.section == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "logOutCell", for: indexPath)
             
             cell.textLabel?.text = "Log Out"

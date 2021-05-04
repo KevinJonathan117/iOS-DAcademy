@@ -80,12 +80,28 @@
                     <navigationItem key="navigationItem" title="More" id="cx2-CI-srj"/>
                     <connections>
                         <outlet property="moreTableView" destination="4hA-Fb-A0I" id="LRT-KR-HVB"/>
-                        <segue destination="5DY-uh-d7p" kind="show" identifier="toProfile" id="AHA-d6-MNE"/>
+                        <segue destination="epe-Ql-w84" kind="show" id="AHA-d6-MNE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYs-fZ-wJD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3642.0289855072465" y="825.66964285714278"/>
+        </scene>
+        <!--My Profile-->
+        <scene sceneID="vB0-aM-fJD">
+            <objects>
+                <viewController id="epe-Ql-w84" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Noy-lZ-xUD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="mZ6-eD-g4l"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Profile" id="lRf-yj-2qR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eYx-m8-bD2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4551" y="826"/>
         </scene>
         <!--More-->
         <scene sceneID="PW7-m4-Iz7">
@@ -105,16 +121,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASN-KG-Xib" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2731.8840579710145" y="825.66964285714278"/>
-        </scene>
-        <!--MyProfile-->
-        <scene sceneID="ba8-oO-nZh">
-            <objects>
-                <viewControllerPlaceholder storyboardName="MyProfile" id="5DY-uh-d7p" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="98W-qS-EZn"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2qQ-BN-et9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4551" y="826"/>
         </scene>
     </scenes>
     <resources>
