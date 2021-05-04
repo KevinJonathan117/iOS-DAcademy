@@ -86,7 +86,7 @@
                         <outlet property="loginButton" destination="eNr-WX-92G" id="wSH-3a-rAI"/>
                         <outlet property="passwordTextbox" destination="TuO-Np-Qzf" id="m5z-NV-gn8"/>
                         <outlet property="usernameTextbox" destination="xh3-d1-lCP" id="YKa-sw-OTB"/>
-                        <segue destination="wcZ-zm-YsY" kind="show" identifier="toHome" id="dVd-ir-9bA"/>
+                        <segue destination="wcZ-zm-YsY" kind="presentation" identifier="toHome" modalPresentationStyle="fullScreen" id="dVd-ir-9bA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
