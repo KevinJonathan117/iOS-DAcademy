@@ -25,7 +25,7 @@ class LearnerDetailController: UIViewController {
         super.viewDidLoad()
         let url = URL(string: photo)
         if let data = try? Data(contentsOf: url!) {
-            learnerImage.image = UIImage(data: data)
+            self.learnerImage.image = UIImage(data: data)
         }
         learnerName.text = name
         learnerExpertise.text = "\(expertise)"

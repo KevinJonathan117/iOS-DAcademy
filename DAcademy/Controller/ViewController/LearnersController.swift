@@ -29,12 +29,12 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == designCollectionView {
-            return 27
+            return designLearnerDatabase.count
         }
         if collectionView == domainExpertCollectionView {
-            return 12
+            return domainLearnerDatabase.count
         }
-        return 72
+        return techLearnerDatabase.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -45,9 +45,15 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
             if(collectionView == techCollectionView) {
                 let url = URL(string: techLearnerDatabase[indexPath.item].photo)
                 techCell.techLabel.text = techLearnerDatabase[indexPath.item].name
-                if let data = try? Data(contentsOf: url!) {
-                    techCell.techImage.image = UIImage(data: data)
-                    techCell.techImage.layer.cornerRadius = 12
+                DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: url!) {
+                        if let image = UIImage(data: data) {
+                            DispatchQueue.main.async {
+                                techCell.techImage.layer.cornerRadius = 12
+                                techCell.techImage.image = image
+                            }
+                        }
+                    }
                 }
             }
             
@@ -57,9 +63,15 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
                     
                     let url = URL(string: designLearnerDatabase[indexPath.item].photo)
                     designCell.designLabel.text = designLearnerDatabase[indexPath.item].name
-                    if let data = try? Data(contentsOf: url!) {
-                        designCell.designImage.image = UIImage(data: data)
-                        designCell.designImage.layer.cornerRadius = 12
+                    DispatchQueue.global().async {
+                        if let data = try? Data(contentsOf: url!) {
+                            if let image = UIImage(data: data) {
+                                DispatchQueue.main.async {
+                                    designCell.designImage.image = image
+                                    designCell.designImage.layer.cornerRadius = 12
+                                }
+                            }
+                        }
                     }
                     
                     return designCell
@@ -72,11 +84,16 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
                     
                     let url = URL(string: domainLearnerDatabase[indexPath.item].photo)
                     domainCell.domainLabel.text = domainLearnerDatabase[indexPath.item].name
-                    if let data = try? Data(contentsOf: url!) {
-                        domainCell.domainImage.image = UIImage(data: data)
-                        domainCell.domainImage.layer.cornerRadius = 12
+                    DispatchQueue.global().async {
+                        if let data = try? Data(contentsOf: url!) {
+                            if let image = UIImage(data: data) {
+                                DispatchQueue.main.async {
+                                    domainCell.domainImage.image = image
+                                    domainCell.domainImage.layer.cornerRadius = 12
+                                }
+                            }
+                        }
                     }
-                    
                     return domainCell
                 }
             }
