@@ -20,6 +20,13 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
     var designLearnerDatabase = [Learner]()
     var domainLearnerDatabase = [Learner]()
     
+    var tempName : String = ""
+    var tempPhoto : String = ""
+    var tempExpertise : String = ""
+    var tempTeam : String = ""
+    var tempShift : String = ""
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == designCollectionView {
             return 27
@@ -77,9 +84,37 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == techCollectionView {
+            tempName = techLearnerDatabase[indexPath.item].name
+            tempPhoto = techLearnerDatabase[indexPath.item].photo
+            tempExpertise = techLearnerDatabase[indexPath.item].expertise
+            tempTeam = techLearnerDatabase[indexPath.item].team
+            tempShift = techLearnerDatabase[indexPath.item].shift
+        } else if collectionView == designCollectionView {
+            tempName = designLearnerDatabase[indexPath.item].name
+            tempPhoto = designLearnerDatabase[indexPath.item].photo
+            tempExpertise = designLearnerDatabase[indexPath.item].expertise
+            tempTeam = designLearnerDatabase[indexPath.item].team
+            tempShift = designLearnerDatabase[indexPath.item].shift
+        } else if collectionView == domainExpertCollectionView {
+            tempName = domainLearnerDatabase[indexPath.item].name
+            tempPhoto = domainLearnerDatabase[indexPath.item].photo
+            tempExpertise = domainLearnerDatabase[indexPath.item].expertise
+            tempTeam = domainLearnerDatabase[indexPath.item].team
+            tempShift = domainLearnerDatabase[indexPath.item].shift
+        }
         performSegue(withIdentifier: "toLearnerDetail", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? LearnerDetailController {
+            vc.name = tempName
+            vc.photo = tempPhoto
+            vc.expertise = tempExpertise
+            vc.team = tempTeam
+            vc.shift = tempShift
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -25,12 +25,31 @@
                                     <action selector="logoutOnClick:" destination="Z66-Lk-xfA" eventType="touchUpInside" id="Htr-0r-gmN"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="4hA-Fb-A0I">
+                                <rect key="frame" x="0.0" y="140" width="414" height="293"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="t2Z-ty-nAo">
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t2Z-ty-nAo" id="Ef8-2U-Wmi">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1BH-so-YRk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="4hA-Fb-A0I" firstAttribute="leading" secondItem="1BH-so-YRk" secondAttribute="leading" id="Any-r1-CLA"/>
                             <constraint firstItem="2aR-e4-4pY" firstAttribute="centerX" secondItem="MP3-UN-j7n" secondAttribute="centerX" id="Uhm-Qo-p9t"/>
+                            <constraint firstItem="2aR-e4-4pY" firstAttribute="top" secondItem="4hA-Fb-A0I" secondAttribute="bottom" id="XAz-1q-Teu"/>
                             <constraint firstItem="2aR-e4-4pY" firstAttribute="centerY" secondItem="MP3-UN-j7n" secondAttribute="centerY" id="cZw-hB-y3C"/>
+                            <constraint firstItem="4hA-Fb-A0I" firstAttribute="trailing" secondItem="1BH-so-YRk" secondAttribute="trailing" id="odL-Ic-7To"/>
+                            <constraint firstItem="4hA-Fb-A0I" firstAttribute="top" secondItem="1BH-so-YRk" secondAttribute="top" id="zPK-ml-RQv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="More" id="cx2-CI-srj"/>

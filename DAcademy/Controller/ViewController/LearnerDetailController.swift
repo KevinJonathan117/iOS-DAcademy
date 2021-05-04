@@ -14,9 +14,23 @@ class LearnerDetailController: UIViewController {
     @IBOutlet weak var learnerExpertise: UILabel!
     @IBOutlet weak var learnerShift: UILabel!
     @IBOutlet weak var learnerTeam: UILabel!
+    
+    var name : String = ""
+    var photo : String = ""
+    var expertise : String = ""
+    var team : String = ""
+    var shift : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("View Did Load")
+        let url = URL(string: photo)
+        if let data = try? Data(contentsOf: url!) {
+            learnerImage.image = UIImage(data: data)
+        }
+        learnerName.text = name
+        learnerExpertise.text = "\(expertise)"
+        learnerTeam.text = "Team: \(team)"
+        learnerShift.text = "Shift: \(shift)"
         // Do any additional setup after loading the view.
     }
     
