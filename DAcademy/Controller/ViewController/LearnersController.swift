@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LearnersController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class LearnersController: UIViewController {
     
     @IBOutlet weak var scrollViewLearners: UIScrollView!
     @IBOutlet weak var techCollectionView: UICollectionView!
@@ -25,103 +25,6 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
     var tempExpertise : String = ""
     var tempTeam : String = ""
     var tempShift : String = ""
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == designCollectionView {
-            return designLearnerDatabase.count
-        }
-        if collectionView == domainExpertCollectionView {
-            return domainLearnerDatabase.count
-        }
-        return techLearnerDatabase.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let techCell = techCollectionView.dequeueReusableCell(withReuseIdentifier: "techCell", for: indexPath) as! TechCollectionViewCell
-        if techLearnerDatabase.count == 0 && designLearnerDatabase.count == 0 && domainLearnerDatabase.count == 0 {
-            return techCell
-        } else {
-            if(collectionView == techCollectionView) {
-                let url = URL(string: techLearnerDatabase[indexPath.item].photo)
-                techCell.techLabel.text = techLearnerDatabase[indexPath.item].name
-                DispatchQueue.global().async {
-                    if let data = try? Data(contentsOf: url!) {
-                        if let image = UIImage(data: data) {
-                            DispatchQueue.main.async {
-                                techCell.techImage.layer.cornerRadius = 12
-                                techCell.techImage.image = image
-                            }
-                        }
-                    }
-                }
-            }
-            
-            if indexPath.item < designLearnerDatabase.count {
-                if(collectionView == designCollectionView) {
-                    let designCell = designCollectionView.dequeueReusableCell(withReuseIdentifier: "designCell", for: indexPath) as! DesignCollectionViewCell
-                    
-                    let url = URL(string: designLearnerDatabase[indexPath.item].photo)
-                    designCell.designLabel.text = designLearnerDatabase[indexPath.item].name
-                    DispatchQueue.global().async {
-                        if let data = try? Data(contentsOf: url!) {
-                            if let image = UIImage(data: data) {
-                                DispatchQueue.main.async {
-                                    designCell.designImage.image = image
-                                    designCell.designImage.layer.cornerRadius = 12
-                                }
-                            }
-                        }
-                    }
-                    
-                    return designCell
-                }
-            }
-            
-            if indexPath.item < domainLearnerDatabase.count {
-                if(collectionView == domainExpertCollectionView) {
-                    let domainCell = domainExpertCollectionView.dequeueReusableCell(withReuseIdentifier: "domainCell", for: indexPath) as! DomainExpertCollectionViewCell
-                    
-                    let url = URL(string: domainLearnerDatabase[indexPath.item].photo)
-                    domainCell.domainLabel.text = domainLearnerDatabase[indexPath.item].name
-                    DispatchQueue.global().async {
-                        if let data = try? Data(contentsOf: url!) {
-                            if let image = UIImage(data: data) {
-                                DispatchQueue.main.async {
-                                    domainCell.domainImage.image = image
-                                    domainCell.domainImage.layer.cornerRadius = 12
-                                }
-                            }
-                        }
-                    }
-                    return domainCell
-                }
-            }
-            return techCell
-        }
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == techCollectionView {
-            tempName = techLearnerDatabase[indexPath.item].name
-            tempPhoto = techLearnerDatabase[indexPath.item].photo
-            tempExpertise = techLearnerDatabase[indexPath.item].expertise
-            tempTeam = techLearnerDatabase[indexPath.item].team
-            tempShift = techLearnerDatabase[indexPath.item].shift
-        } else if collectionView == designCollectionView {
-            tempName = designLearnerDatabase[indexPath.item].name
-            tempPhoto = designLearnerDatabase[indexPath.item].photo
-            tempExpertise = designLearnerDatabase[indexPath.item].expertise
-            tempTeam = designLearnerDatabase[indexPath.item].team
-            tempShift = designLearnerDatabase[indexPath.item].shift
-        } else if collectionView == domainExpertCollectionView {
-            tempName = domainLearnerDatabase[indexPath.item].name
-            tempPhoto = domainLearnerDatabase[indexPath.item].photo
-            tempExpertise = domainLearnerDatabase[indexPath.item].expertise
-            tempTeam = domainLearnerDatabase[indexPath.item].team
-            tempShift = domainLearnerDatabase[indexPath.item].shift
-        }
-        performSegue(withIdentifier: "toLearnerDetail", sender: self)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? LearnerDetailController {
@@ -200,17 +103,106 @@ class LearnersController: UIViewController, UICollectionViewDelegate, UICollecti
                 
                 self.present(alert, animated: true)
             }
-        }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+}
 
+extension LearnersController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == techCollectionView {
+            tempName = techLearnerDatabase[indexPath.item].name
+            tempPhoto = techLearnerDatabase[indexPath.item].photo
+            tempExpertise = techLearnerDatabase[indexPath.item].expertise
+            tempTeam = techLearnerDatabase[indexPath.item].team
+            tempShift = techLearnerDatabase[indexPath.item].shift
+        } else if collectionView == designCollectionView {
+            tempName = designLearnerDatabase[indexPath.item].name
+            tempPhoto = designLearnerDatabase[indexPath.item].photo
+            tempExpertise = designLearnerDatabase[indexPath.item].expertise
+            tempTeam = designLearnerDatabase[indexPath.item].team
+            tempShift = designLearnerDatabase[indexPath.item].shift
+        } else if collectionView == domainExpertCollectionView {
+            tempName = domainLearnerDatabase[indexPath.item].name
+            tempPhoto = domainLearnerDatabase[indexPath.item].photo
+            tempExpertise = domainLearnerDatabase[indexPath.item].expertise
+            tempTeam = domainLearnerDatabase[indexPath.item].team
+            tempShift = domainLearnerDatabase[indexPath.item].shift
+        }
+        performSegue(withIdentifier: "toLearnerDetail", sender: self)
+    }
+}
+
+extension LearnersController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == designCollectionView {
+            return designLearnerDatabase.count
+        }
+        if collectionView == domainExpertCollectionView {
+            return domainLearnerDatabase.count
+        }
+        return techLearnerDatabase.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let techCell = techCollectionView.dequeueReusableCell(withReuseIdentifier: "techCell", for: indexPath) as! TechCollectionViewCell
+        if techLearnerDatabase.count == 0 && designLearnerDatabase.count == 0 && domainLearnerDatabase.count == 0 {
+            return techCell
+        } else {
+            if(collectionView == techCollectionView) {
+                let url = URL(string: techLearnerDatabase[indexPath.item].photo)
+                techCell.techLabel.text = techLearnerDatabase[indexPath.item].name
+                DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: url!) {
+                        if let image = UIImage(data: data) {
+                            DispatchQueue.main.async {
+                                techCell.techImage.layer.cornerRadius = 12
+                                techCell.techImage.image = image
+                            }
+                        }
+                    }
+                }
+            }
+            
+            if indexPath.item < designLearnerDatabase.count {
+                if(collectionView == designCollectionView) {
+                    let designCell = designCollectionView.dequeueReusableCell(withReuseIdentifier: "designCell", for: indexPath) as! DesignCollectionViewCell
+                    
+                    let url = URL(string: designLearnerDatabase[indexPath.item].photo)
+                    designCell.designLabel.text = designLearnerDatabase[indexPath.item].name
+                    DispatchQueue.global().async {
+                        if let data = try? Data(contentsOf: url!) {
+                            if let image = UIImage(data: data) {
+                                DispatchQueue.main.async {
+                                    designCell.designImage.image = image
+                                    designCell.designImage.layer.cornerRadius = 12
+                                }
+                            }
+                        }
+                    }
+                    
+                    return designCell
+                }
+            }
+            
+            if indexPath.item < domainLearnerDatabase.count {
+                if(collectionView == domainExpertCollectionView) {
+                    let domainCell = domainExpertCollectionView.dequeueReusableCell(withReuseIdentifier: "domainCell", for: indexPath) as! DomainExpertCollectionViewCell
+                    
+                    let url = URL(string: domainLearnerDatabase[indexPath.item].photo)
+                    domainCell.domainLabel.text = domainLearnerDatabase[indexPath.item].name
+                    DispatchQueue.global().async {
+                        if let data = try? Data(contentsOf: url!) {
+                            if let image = UIImage(data: data) {
+                                DispatchQueue.main.async {
+                                    domainCell.domainImage.image = image
+                                    domainCell.domainImage.layer.cornerRadius = 12
+                                }
+                            }
+                        }
+                    }
+                    return domainCell
+                }
+            }
+            return techCell
+        }
+    }
 }

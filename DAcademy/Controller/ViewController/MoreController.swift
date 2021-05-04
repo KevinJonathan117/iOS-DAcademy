@@ -16,6 +16,10 @@ class MoreController: UIViewController {
     }
     
     @IBAction func logoutOnClick(_ sender: UIButton) {
+        
+    }
+    
+    func logOut() {
         currentLogin.removeKeyForLogin(key: "username")
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
