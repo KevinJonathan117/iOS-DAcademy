@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5D45A524264289290058D7B1 /* NewTimelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D45A523264289290058D7B1 /* NewTimelineController.swift */; };
 		5D45A526264289BC0058D7B1 /* TimelineDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D45A525264289BC0058D7B1 /* TimelineDetailController.swift */; };
+		5D45A5282642A6710058D7B1 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D45A5272642A6710058D7B1 /* Timeline.swift */; };
 		5D6A888B263C12BC005E1CCA /* TechCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A888A263C12BC005E1CCA /* TechCollectionViewCell.swift */; };
 		5D6A888E263C12DB005E1CCA /* DesignCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A888D263C12DB005E1CCA /* DesignCollectionViewCell.swift */; };
 		5D6A8890263C12F4005E1CCA /* DomainExpertCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A888F263C12F4005E1CCA /* DomainExpertCollectionViewCell.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		5D45A523264289290058D7B1 /* NewTimelineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTimelineController.swift; sourceTree = "<group>"; };
 		5D45A525264289BC0058D7B1 /* TimelineDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineDetailController.swift; sourceTree = "<group>"; };
+		5D45A5272642A6710058D7B1 /* Timeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		5D6A888A263C12BC005E1CCA /* TechCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D6A888D263C12DB005E1CCA /* DesignCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D6A888F263C12F4005E1CCA /* DomainExpertCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainExpertCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				5DF52815263AAADC0001A1AF /* CurrentLogin.swift */,
 				5D6A8891263FD79D005E1CCA /* Learner.swift */,
+				5D45A5272642A6710058D7B1 /* Timeline.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				5D45A526264289BC0058D7B1 /* TimelineDetailController.swift in Sources */,
 				5D6A889826414EFB005E1CCA /* ProfileController.swift in Sources */,
 				5D723102263ABBB5006D5B0B /* LearnersController.swift in Sources */,
+				5D45A5282642A6710058D7B1 /* Timeline.swift in Sources */,
 				5DF52816263AAADC0001A1AF /* CurrentLogin.swift in Sources */,
 				5D6A888E263C12DB005E1CCA /* DesignCollectionViewCell.swift in Sources */,
 				5D6A8892263FD79D005E1CCA /* Learner.swift in Sources */,

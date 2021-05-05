@@ -14,12 +14,5 @@ class TimelineCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var timelineDate: UILabel!
     @IBOutlet weak var timelineContent: UILabel!
     @IBOutlet weak var timelineDetailButton: UIButton!
-    
-    
-    @IBAction func timelineOptionOnClick(_ sender: UIButton) {
-        print("Timeline option")
-    }
-    @IBAction func timelineDetailOnClick(_ sender: UIButton) {
-        
-    }
+
 }
