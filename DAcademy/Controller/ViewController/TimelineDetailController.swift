@@ -9,9 +9,21 @@ import UIKit
 
 class TimelineDetailController: UIViewController {
 
+    @IBOutlet weak var timelineDetailImage: UIImageView!
+    @IBOutlet weak var timelineDetailName: UILabel!
+    @IBOutlet weak var timelineDetailDate: UILabel!
+    @IBOutlet weak var timelineDetailContent: UILabel!
+    
+    var name = ""
+    var date = ""
+    var content = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        timelineDetailImage.layer.cornerRadius = 25
+        timelineDetailName.text = name
+        timelineDetailDate.text = date
+        timelineDetailContent.text = content
         // Do any additional setup after loading the view.
     }
     

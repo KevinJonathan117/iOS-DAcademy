@@ -148,14 +148,61 @@
                     <view key="view" contentMode="scaleToFill" id="4Em-eP-9YI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pXV-O2-ZcH">
+                                <rect key="frame" x="20" y="180" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="TSx-3X-0Jo"/>
+                                    <constraint firstAttribute="width" constant="50" id="qDf-Mr-Vhk"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eW9-D4-NqH">
+                                <rect key="frame" x="90" y="180" width="304" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFJ-lo-M8T">
+                                <rect key="frame" x="90" y="211" width="304" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkY-JS-ykD">
+                                <rect key="frame" x="20" y="246" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ged-nd-2L9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eW9-D4-NqH" firstAttribute="top" secondItem="ged-nd-2L9" secondAttribute="top" constant="40" id="5dQ-Bx-DMr"/>
+                            <constraint firstItem="xFJ-lo-M8T" firstAttribute="leading" secondItem="pXV-O2-ZcH" secondAttribute="trailing" constant="20" id="B6b-wt-4E0"/>
+                            <constraint firstItem="pXV-O2-ZcH" firstAttribute="top" secondItem="ged-nd-2L9" secondAttribute="top" constant="40" id="DXM-pB-6Am"/>
+                            <constraint firstItem="ged-nd-2L9" firstAttribute="trailing" secondItem="eW9-D4-NqH" secondAttribute="trailing" constant="20" id="Exq-A1-xgT"/>
+                            <constraint firstItem="jkY-JS-ykD" firstAttribute="top" secondItem="xFJ-lo-M8T" secondAttribute="bottom" constant="20" id="JuJ-uJ-TzY"/>
+                            <constraint firstItem="eW9-D4-NqH" firstAttribute="leading" secondItem="pXV-O2-ZcH" secondAttribute="trailing" constant="20" id="WdC-NE-3iT"/>
+                            <constraint firstItem="pXV-O2-ZcH" firstAttribute="leading" secondItem="ged-nd-2L9" secondAttribute="leading" constant="20" id="bF4-uo-rbx"/>
+                            <constraint firstItem="jkY-JS-ykD" firstAttribute="leading" secondItem="ged-nd-2L9" secondAttribute="leading" constant="20" id="cc6-2N-diy"/>
+                            <constraint firstItem="ged-nd-2L9" firstAttribute="trailing" secondItem="xFJ-lo-M8T" secondAttribute="trailing" constant="20" id="ewj-Zn-YN4"/>
+                            <constraint firstItem="ged-nd-2L9" firstAttribute="trailing" secondItem="jkY-JS-ykD" secondAttribute="trailing" constant="20" id="m6S-lk-UKS"/>
+                            <constraint firstItem="xFJ-lo-M8T" firstAttribute="top" secondItem="eW9-D4-NqH" secondAttribute="bottom" constant="10" id="xFC-uk-uVj"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Timeline Detail" id="JoV-xU-PRF"/>
+                    <connections>
+                        <outlet property="timelineDetailContent" destination="jkY-JS-ykD" id="1jh-7u-ex0"/>
+                        <outlet property="timelineDetailDate" destination="xFJ-lo-M8T" id="Ipi-My-aT2"/>
+                        <outlet property="timelineDetailImage" destination="pXV-O2-ZcH" id="dSd-HG-VR3"/>
+                        <outlet property="timelineDetailName" destination="eW9-D4-NqH" id="Q5J-7S-fy7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VwP-au-vVT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4610" y="-169"/>
+            <point key="canvasLocation" x="4608.695652173913" y="-169.41964285714286"/>
         </scene>
         <!--New Timeline-->
         <scene sceneID="Gea-9O-Mbn">
