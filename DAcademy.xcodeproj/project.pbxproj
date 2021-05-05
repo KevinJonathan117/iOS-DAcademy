@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D45A524264289290058D7B1 /* NewTimelineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D45A523264289290058D7B1 /* NewTimelineController.swift */; };
+		5D45A526264289BC0058D7B1 /* TimelineDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D45A525264289BC0058D7B1 /* TimelineDetailController.swift */; };
 		5D6A888B263C12BC005E1CCA /* TechCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A888A263C12BC005E1CCA /* TechCollectionViewCell.swift */; };
 		5D6A888E263C12DB005E1CCA /* DesignCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A888D263C12DB005E1CCA /* DesignCollectionViewCell.swift */; };
 		5D6A8890263C12F4005E1CCA /* DomainExpertCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A888F263C12F4005E1CCA /* DomainExpertCollectionViewCell.swift */; };
@@ -14,6 +16,7 @@
 		5D6A8894264007B9005E1CCA /* LearnerDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A8893264007B9005E1CCA /* LearnerDetailController.swift */; };
 		5D6A889826414EFB005E1CCA /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A889726414EFB005E1CCA /* ProfileController.swift */; };
 		5D6A889B26415088005E1CCA /* MyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6A889926415088005E1CCA /* MyProfile.storyboard */; };
+		5D6A889D26427808005E1CCA /* TimelineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A889C26427808005E1CCA /* TimelineCollectionViewCell.swift */; };
 		5D7230F8263AB5CD006D5B0B /* MoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7230F7263AB5CD006D5B0B /* MoreController.swift */; };
 		5D7230FB263AB954006D5B0B /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D7230F9263AB954006D5B0B /* Timeline.storyboard */; };
 		5D7230FD263AB9AF006D5B0B /* Learners.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D7230FC263AB9AF006D5B0B /* Learners.storyboard */; };
@@ -30,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D45A523264289290058D7B1 /* NewTimelineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTimelineController.swift; sourceTree = "<group>"; };
+		5D45A525264289BC0058D7B1 /* TimelineDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineDetailController.swift; sourceTree = "<group>"; };
 		5D6A888A263C12BC005E1CCA /* TechCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D6A888D263C12DB005E1CCA /* DesignCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D6A888F263C12F4005E1CCA /* DomainExpertCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainExpertCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -37,6 +42,7 @@
 		5D6A8893264007B9005E1CCA /* LearnerDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnerDetailController.swift; sourceTree = "<group>"; };
 		5D6A889726414EFB005E1CCA /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		5D6A889A26415088005E1CCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DAcademy/View/DAcademy/View/Base.lproj/MyProfile.storyboard; sourceTree = "<group>"; };
+		5D6A889C26427808005E1CCA /* TimelineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D7230F7263AB5CD006D5B0B /* MoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreController.swift; sourceTree = "<group>"; };
 		5D7230FA263AB954006D5B0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DAcademy/View/Base.lproj/Timeline.storyboard; sourceTree = "<group>"; };
 		5D7230FC263AB9AF006D5B0B /* Learners.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Learners.storyboard; sourceTree = "<group>"; };
@@ -68,6 +74,7 @@
 		5D6A8888263C1271005E1CCA /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				5D6A889C26427808005E1CCA /* TimelineCollectionViewCell.swift */,
 				5D6A888A263C12BC005E1CCA /* TechCollectionViewCell.swift */,
 				5D6A888D263C12DB005E1CCA /* DesignCollectionViewCell.swift */,
 				5D6A888F263C12F4005E1CCA /* DomainExpertCollectionViewCell.swift */,
@@ -84,6 +91,8 @@
 				5D7230F7263AB5CD006D5B0B /* MoreController.swift */,
 				5D6A8893264007B9005E1CCA /* LearnerDetailController.swift */,
 				5D6A889726414EFB005E1CCA /* ProfileController.swift */,
+				5D45A523264289290058D7B1 /* NewTimelineController.swift */,
+				5D45A525264289BC0058D7B1 /* TimelineDetailController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -225,9 +234,12 @@
 			files = (
 				5D6A8894264007B9005E1CCA /* LearnerDetailController.swift in Sources */,
 				5D6A8890263C12F4005E1CCA /* DomainExpertCollectionViewCell.swift in Sources */,
+				5D6A889D26427808005E1CCA /* TimelineCollectionViewCell.swift in Sources */,
+				5D45A524264289290058D7B1 /* NewTimelineController.swift in Sources */,
 				5D723104263ABBC7006D5B0B /* TimelineController.swift in Sources */,
 				5D7230F8263AB5CD006D5B0B /* MoreController.swift in Sources */,
 				5D6A888B263C12BC005E1CCA /* TechCollectionViewCell.swift in Sources */,
+				5D45A526264289BC0058D7B1 /* TimelineDetailController.swift in Sources */,
 				5D6A889826414EFB005E1CCA /* ProfileController.swift in Sources */,
 				5D723102263ABBB5006D5B0B /* LearnersController.swift in Sources */,
 				5DF52816263AAADC0001A1AF /* CurrentLogin.swift in Sources */,

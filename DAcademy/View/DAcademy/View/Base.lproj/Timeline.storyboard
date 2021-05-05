@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,14 +16,173 @@
                     <view key="view" contentMode="scaleToFill" id="K1j-0a-7eY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WLP-pO-rM4">
+                                <rect key="frame" x="20" y="108" width="374" height="768"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="R3g-Yt-RiS">
+                                    <size key="itemSize" width="374" height="197"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="timelineCell" id="zgI-cP-U7T" customClass="TimelineCollectionViewCell" customModule="DAcademy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="197"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZYj-zT-XGh">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="197"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wj7-Ta-PeE">
+                                                    <rect key="frame" x="20" y="20" width="50" height="50"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="mtg-SJ-Dti"/>
+                                                        <constraint firstAttribute="height" constant="50" id="yS1-TI-vxH"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rir-w7-6NX">
+                                                    <rect key="frame" x="90" y="20" width="219" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lv9-H8-yD3">
+                                                    <rect key="frame" x="329" y="20" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="CBM-go-UsS"/>
+                                                        <constraint firstAttribute="height" constant="25" id="iZS-0Y-kj7"/>
+                                                    </constraints>
+                                                    <state key="normal" image="ellipsis" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="timelineOptionOnClick:" destination="zgI-cP-U7T" eventType="touchUpInside" id="Wdu-Qc-X6U"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWx-CO-ObI">
+                                                    <rect key="frame" x="90" y="51" width="264" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2r8-mn-ndQ">
+                                                    <rect key="frame" x="20" y="85.5" width="334" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EF5-Av-HKJ">
+                                                    <rect key="frame" x="20" y="162" width="98" height="30"/>
+                                                    <state key="normal" title="View Details &gt;"/>
+                                                    <connections>
+                                                        <action selector="timelineDetailOnClick:" destination="zgI-cP-U7T" eventType="touchUpInside" id="Pc1-hN-pSD"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lv9-H8-yD3" firstAttribute="leading" secondItem="Rir-w7-6NX" secondAttribute="trailing" constant="20" id="02o-lO-35V"/>
+                                                <constraint firstItem="Rir-w7-6NX" firstAttribute="top" secondItem="wj7-Ta-PeE" secondAttribute="top" id="2cD-lf-5AR"/>
+                                                <constraint firstItem="Rir-w7-6NX" firstAttribute="leading" secondItem="wj7-Ta-PeE" secondAttribute="trailing" constant="20" id="CTA-xk-uIT"/>
+                                                <constraint firstItem="2r8-mn-ndQ" firstAttribute="top" secondItem="aWx-CO-ObI" secondAttribute="bottom" constant="20" id="DJG-Sf-KNA"/>
+                                                <constraint firstAttribute="bottom" secondItem="EF5-Av-HKJ" secondAttribute="bottom" constant="5" id="GJ0-Cb-mh5"/>
+                                                <constraint firstItem="wj7-Ta-PeE" firstAttribute="leading" secondItem="ZYj-zT-XGh" secondAttribute="leading" constant="20" id="KXV-vj-MMM"/>
+                                                <constraint firstItem="aWx-CO-ObI" firstAttribute="leading" secondItem="wj7-Ta-PeE" secondAttribute="trailing" constant="20" id="Oxf-YS-6KO"/>
+                                                <constraint firstItem="EF5-Av-HKJ" firstAttribute="leading" secondItem="ZYj-zT-XGh" secondAttribute="leading" constant="20" id="XR5-pu-hOT"/>
+                                                <constraint firstItem="aWx-CO-ObI" firstAttribute="top" secondItem="Rir-w7-6NX" secondAttribute="bottom" constant="10" id="bdu-nF-WEk"/>
+                                                <constraint firstItem="2r8-mn-ndQ" firstAttribute="leading" secondItem="ZYj-zT-XGh" secondAttribute="leading" constant="20" id="fFU-V0-d5y"/>
+                                                <constraint firstAttribute="trailing" secondItem="aWx-CO-ObI" secondAttribute="trailing" constant="20" id="fJd-sa-moK"/>
+                                                <constraint firstItem="wj7-Ta-PeE" firstAttribute="top" secondItem="ZYj-zT-XGh" secondAttribute="top" constant="20" id="ghZ-om-WN9"/>
+                                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="EF5-Av-HKJ" secondAttribute="trailing" constant="256" id="gjA-q9-bdo"/>
+                                                <constraint firstAttribute="trailing" secondItem="lv9-H8-yD3" secondAttribute="trailing" constant="20" id="jLT-ex-cZK"/>
+                                                <constraint firstAttribute="trailing" secondItem="2r8-mn-ndQ" secondAttribute="trailing" constant="20" id="oPd-I0-Z82"/>
+                                                <constraint firstItem="lv9-H8-yD3" firstAttribute="top" secondItem="ZYj-zT-XGh" secondAttribute="top" constant="20" id="xHJ-87-XFo"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="374" height="197"/>
+                                        <connections>
+                                            <outlet property="timelineButton" destination="lv9-H8-yD3" id="Vqd-lP-9mw"/>
+                                            <outlet property="timelineContent" destination="2r8-mn-ndQ" id="IUV-U3-EiM"/>
+                                            <outlet property="timelineDate" destination="aWx-CO-ObI" id="vvI-04-yO0"/>
+                                            <outlet property="timelineDetailButton" destination="EF5-Av-HKJ" id="dEb-4a-P2c"/>
+                                            <outlet property="timelineImage" destination="wj7-Ta-PeE" id="UcY-dc-JMF"/>
+                                            <outlet property="timelineName" destination="Rir-w7-6NX" id="q4A-VG-XaU"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="1mC-4q-RMO" id="vXT-9Q-uDG"/>
+                                    <outlet property="delegate" destination="1mC-4q-RMO" id="7rl-Hm-hz6"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hLo-XI-TKd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="WLP-pO-rM4" secondAttribute="bottom" constant="20" id="K8Z-sA-May"/>
+                            <constraint firstItem="WLP-pO-rM4" firstAttribute="leading" secondItem="hLo-XI-TKd" secondAttribute="leading" constant="20" id="cPe-es-a1U"/>
+                            <constraint firstItem="hLo-XI-TKd" firstAttribute="trailing" secondItem="WLP-pO-rM4" secondAttribute="trailing" constant="20" id="t8J-ht-4jL"/>
+                            <constraint firstItem="WLP-pO-rM4" firstAttribute="top" secondItem="hLo-XI-TKd" secondAttribute="top" constant="20" id="ykz-ea-XUb"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Timeline" id="jSx-p2-I1a"/>
+                    <navigationItem key="navigationItem" title="Timeline" id="jSx-p2-I1a">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="m4p-G2-GYB">
+                            <connections>
+                                <action selector="addNewTimeline:" destination="1mC-4q-RMO" id="jWb-vy-k6r"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="timelineCollectionView" destination="WLP-pO-rM4" id="Swq-zo-Jf3"/>
+                        <segue destination="Qdo-46-ETV" kind="presentation" identifier="toNewTimeline" id="E2m-hV-X3o"/>
+                        <segue destination="uUT-c2-REP" kind="show" identifier="toTimelineDetail" id="pZy-lA-Ctp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2r-0G-y5u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3749.275362318841" y="-528.34821428571422"/>
+        </scene>
+        <!--Timeline Detail-->
+        <scene sceneID="e8A-oW-EV4">
+            <objects>
+                <viewController id="uUT-c2-REP" customClass="TimelineDetailController" customModule="DAcademy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Em-eP-9YI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ged-nd-2L9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Timeline Detail" id="JoV-xU-PRF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VwP-au-vVT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4610" y="-169"/>
+        </scene>
+        <!--New Timeline-->
+        <scene sceneID="Gea-9O-Mbn">
+            <objects>
+                <viewController id="7t1-L1-7ig" customClass="NewTimelineController" customModule="DAcademy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mpo-rP-HnW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="lUy-bh-fSG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Timeline" id="sZu-go-P7N">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="6Xn-DI-Dib">
+                            <connections>
+                                <action selector="cancelButton:" destination="7t1-L1-7ig" id="tT3-wj-axe"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="Lql-2i-fGM">
+                            <connections>
+                                <action selector="doneButton:" destination="7t1-L1-7ig" id="9nA-O3-WHv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jc0-e6-oKI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5531.884057971015" y="-836.38392857142856"/>
         </scene>
         <!--Timeline-->
         <scene sceneID="mfW-za-T1w">
@@ -43,9 +203,29 @@
             </objects>
             <point key="canvasLocation" x="2839.130434782609" y="-528.34821428571422"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ekz-ig-CGZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qdo-46-ETV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6cC-r6-StE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7t1-L1-7ig" kind="relationship" relationship="rootViewController" id="LZS-nY-Ygq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vr2-9X-KYc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4621.739130434783" y="-836.38392857142856"/>
+        </scene>
     </scenes>
     <resources>
         <image name="clock.fill" catalog="system" width="128" height="121"/>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
