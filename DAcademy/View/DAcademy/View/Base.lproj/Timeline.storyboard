@@ -164,8 +164,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkY-JS-ykD">
-                                <rect key="frame" x="20" y="246" width="374" height="20.5"/>
+                                <rect key="frame" x="20" y="291" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood Level:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbu-Ng-EUn">
+                                <rect key="frame" x="20" y="250" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -173,11 +179,14 @@
                         <viewLayoutGuide key="safeArea" id="ged-nd-2L9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Hbu-Ng-EUn" firstAttribute="top" secondItem="pXV-O2-ZcH" secondAttribute="bottom" constant="20" id="4Qc-0P-oqt"/>
                             <constraint firstItem="eW9-D4-NqH" firstAttribute="top" secondItem="ged-nd-2L9" secondAttribute="top" constant="40" id="5dQ-Bx-DMr"/>
+                            <constraint firstItem="ged-nd-2L9" firstAttribute="trailing" secondItem="Hbu-Ng-EUn" secondAttribute="trailing" constant="20" id="AVn-lr-4Ke"/>
                             <constraint firstItem="xFJ-lo-M8T" firstAttribute="leading" secondItem="pXV-O2-ZcH" secondAttribute="trailing" constant="20" id="B6b-wt-4E0"/>
                             <constraint firstItem="pXV-O2-ZcH" firstAttribute="top" secondItem="ged-nd-2L9" secondAttribute="top" constant="40" id="DXM-pB-6Am"/>
                             <constraint firstItem="ged-nd-2L9" firstAttribute="trailing" secondItem="eW9-D4-NqH" secondAttribute="trailing" constant="20" id="Exq-A1-xgT"/>
-                            <constraint firstItem="jkY-JS-ykD" firstAttribute="top" secondItem="xFJ-lo-M8T" secondAttribute="bottom" constant="20" id="JuJ-uJ-TzY"/>
+                            <constraint firstItem="Hbu-Ng-EUn" firstAttribute="leading" secondItem="ged-nd-2L9" secondAttribute="leading" constant="20" id="QIJ-E0-fdq"/>
+                            <constraint firstItem="jkY-JS-ykD" firstAttribute="top" secondItem="Hbu-Ng-EUn" secondAttribute="bottom" constant="20" id="Vjy-FK-dRi"/>
                             <constraint firstItem="eW9-D4-NqH" firstAttribute="leading" secondItem="pXV-O2-ZcH" secondAttribute="trailing" constant="20" id="WdC-NE-3iT"/>
                             <constraint firstItem="pXV-O2-ZcH" firstAttribute="leading" secondItem="ged-nd-2L9" secondAttribute="leading" constant="20" id="bF4-uo-rbx"/>
                             <constraint firstItem="jkY-JS-ykD" firstAttribute="leading" secondItem="ged-nd-2L9" secondAttribute="leading" constant="20" id="cc6-2N-diy"/>
@@ -191,6 +200,7 @@
                         <outlet property="timelineDetailContent" destination="jkY-JS-ykD" id="1jh-7u-ex0"/>
                         <outlet property="timelineDetailDate" destination="xFJ-lo-M8T" id="Ipi-My-aT2"/>
                         <outlet property="timelineDetailImage" destination="pXV-O2-ZcH" id="dSd-HG-VR3"/>
+                        <outlet property="timelineDetailMoodLevel" destination="Hbu-Ng-EUn" id="1d1-A5-0uD"/>
                         <outlet property="timelineDetailName" destination="eW9-D4-NqH" id="Q5J-7S-fy7"/>
                     </connections>
                 </viewController>

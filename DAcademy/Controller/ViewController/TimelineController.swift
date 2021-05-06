@@ -23,7 +23,7 @@ class TimelineController: UIViewController {
                                      content: "Today, I have learnt about how to use AVFoundation framework. It is very interesting because I can play and record my voice using the AVRecorder and AVPlayer, cool! I learnt about this framework using Stackoverflow and Apple’s Documentation. With AVRecorder, we can just use .start(), .pause(), stop() to manage the recording session. It is not that hard whatsoever to implement this in our projects."))
         timelineData.append(Timeline(name: "Kevin Jonathan",
                                      date: "19:30 PM - 21 Maret 2021",
-                                     content: "Today, I have learnt about how to use UIKit framework. I struggled at first but I started to get the hang of it! I guess? But anyway, I want to share my experience in this timeline that Swift is relatively easy!"))
+                                     content: "Today, I have learnt about how to use UIKit framework. I struggled at first but I started to get the hang of it! I guess? But anyway, I want to share my experience in this timeline that Swift is relatively easy? I am not sure to be honest."))
         // Do any additional setup after loading the view.
     }
     @IBAction func addNewTimeline(_ sender: Any) {

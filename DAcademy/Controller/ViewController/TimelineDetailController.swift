@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NaturalLanguage
 
 class TimelineDetailController: UIViewController {
 
@@ -13,6 +14,7 @@ class TimelineDetailController: UIViewController {
     @IBOutlet weak var timelineDetailName: UILabel!
     @IBOutlet weak var timelineDetailDate: UILabel!
     @IBOutlet weak var timelineDetailContent: UILabel!
+    @IBOutlet weak var timelineDetailMoodLevel: UILabel!
     
     var name = ""
     var date = ""
@@ -21,10 +23,41 @@ class TimelineDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timelineDetailImage.layer.cornerRadius = 25
+        moodAnalysis()
         timelineDetailName.text = name
         timelineDetailDate.text = date
         timelineDetailContent.text = content
         // Do any additional setup after loading the view.
+    }
+    
+    func moodAnalysis() {
+        //check if the language is english or not
+        let languageRecog = NLLanguageRecognizer()
+        
+        languageRecog.processString(content)
+        //if english, use the mood analysis
+        if languageRecog.dominantLanguage!.rawValue == "en" {
+            let tagger = NLTagger(tagSchemes: [.sentimentScore])
+            tagger.string = content
+            
+            let sentiment = tagger.tag(at: content.startIndex, unit: .paragraph, scheme: .sentimentScore).0
+            
+            let score = Double(sentiment?.rawValue ?? "0") ?? 0
+            var emoji = ""
+            
+            if(score == 0) {
+                emoji = "🙂"
+            } else if score < 0{
+                emoji = "😢"
+            } else {
+                emoji = "😁"
+            }
+            timelineDetailMoodLevel.text = "Mood Level: \(emoji)"
+        } else {
+            //if not english, display nothing, because sentiment analysis only supports 7 languages (including english).
+            timelineDetailMoodLevel.text = ""
+        }
+        
     }
     
 
