@@ -53,6 +53,7 @@ class TimelineDetailController: UIViewController {
                 emoji = "😁"
             }
             timelineDetailMoodLevel.text = "Mood Level: \(emoji)"
+            print(score)
         } else {
             //if not english, display nothing, because sentiment analysis only supports 7 languages (including english).
             timelineDetailMoodLevel.text = ""

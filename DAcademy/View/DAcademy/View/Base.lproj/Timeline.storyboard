@@ -127,8 +127,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="timelineCollectionView" destination="WLP-pO-rM4" id="Swq-zo-Jf3"/>
-                        <segue destination="Qdo-46-ETV" kind="show" identifier="toNewTimeline" id="E2m-hV-X3o"/>
                         <segue destination="uUT-c2-REP" kind="show" identifier="toTimelineDetail" id="pZy-lA-Ctp"/>
+                        <segue destination="7t1-L1-7ig" kind="show" identifier="toNewTimeline" id="ne3-Qr-v7E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2r-0G-y5u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -217,7 +217,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RAH-FA-Exb">
-                                <rect key="frame" x="20" y="108" width="374" height="774"/>
+                                <rect key="frame" x="20" y="160" width="374" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -237,11 +237,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Timeline" id="sZu-go-P7N">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="6Xn-DI-Dib">
-                            <connections>
-                                <action selector="cancelButton:" destination="7t1-L1-7ig" id="tT3-wj-axe"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="Lql-2i-fGM">
                             <connections>
                                 <action selector="doneButton:" destination="7t1-L1-7ig" id="9nA-O3-WHv"/>
@@ -274,28 +269,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YKr-ds-gem" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2839.130434782609" y="-528.34821428571422"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ekz-ig-CGZ">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vr2-9X-KYc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qdo-46-ETV" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Hs7-T6-9As"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6cC-r6-StE">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UXh-2d-eiZ">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="7t1-L1-7ig" kind="relationship" relationship="rootViewController" id="LZS-nY-Ygq"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="4621.739130434783" y="-836.38392857142856"/>
         </scene>
     </scenes>
     <resources>

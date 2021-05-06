@@ -87,16 +87,48 @@
 		5D6A8889263C127A005E1CCA /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5DF52817263AADBD0001A1AF /* LoginController.swift */,
-				5D723103263ABBC7006D5B0B /* TimelineController.swift */,
-				5D723101263ABBB5006D5B0B /* LearnersController.swift */,
-				5D7230F7263AB5CD006D5B0B /* MoreController.swift */,
-				5D6A8893264007B9005E1CCA /* LearnerDetailController.swift */,
-				5D6A889726414EFB005E1CCA /* ProfileController.swift */,
-				5D45A523264289290058D7B1 /* NewTimelineController.swift */,
-				5D45A525264289BC0058D7B1 /* TimelineDetailController.swift */,
+				5D996FD72643EF8F00D82196 /* Login */,
+				5D996FD82643EF9A00D82196 /* Timeline */,
+				5D996FD92643EFAD00D82196 /* Learners */,
+				5D996FDA2643EFC000D82196 /* More */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5D996FD72643EF8F00D82196 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5DF52817263AADBD0001A1AF /* LoginController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5D996FD82643EF9A00D82196 /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				5D723103263ABBC7006D5B0B /* TimelineController.swift */,
+				5D45A525264289BC0058D7B1 /* TimelineDetailController.swift */,
+				5D45A523264289290058D7B1 /* NewTimelineController.swift */,
+			);
+			path = Timeline;
+			sourceTree = "<group>";
+		};
+		5D996FD92643EFAD00D82196 /* Learners */ = {
+			isa = PBXGroup;
+			children = (
+				5D6A8893264007B9005E1CCA /* LearnerDetailController.swift */,
+				5D723101263ABBB5006D5B0B /* LearnersController.swift */,
+			);
+			path = Learners;
+			sourceTree = "<group>";
+		};
+		5D996FDA2643EFC000D82196 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				5D7230F7263AB5CD006D5B0B /* MoreController.swift */,
+				5D6A889726414EFB005E1CCA /* ProfileController.swift */,
+			);
+			path = More;
 			sourceTree = "<group>";
 		};
 		5DF527F2263AA41E0001A1AF = {

@@ -26,6 +26,7 @@ class LearnerDetailController: UIViewController {
         let url = URL(string: photo)
         if let data = try? Data(contentsOf: url!) {
             self.learnerImage.image = UIImage(data: data)
+            self.learnerImage.layer.cornerRadius = 8
         }
         learnerName.text = name
         learnerExpertise.text = "\(expertise)"

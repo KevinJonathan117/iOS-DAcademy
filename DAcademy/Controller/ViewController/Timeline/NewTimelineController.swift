@@ -19,12 +19,12 @@ class NewTimelineController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         timelineTextView.textColor = .lightGray
-        timelineTextView.text = "What's new?"
+        timelineTextView.text = "What's new? start typing here..."
         // Do any additional setup after loading the view.
     }
     
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
         let newTimeline = Timeline(name: "Kevin Jonathan", date: "7:30 - 6 May 2021", content: timelineTextView.text)
@@ -38,7 +38,7 @@ class NewTimelineController: UIViewController {
         
         delegate?.reloadCollectionView(data: setReload)
 
-        self.dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,7 +57,7 @@ extension NewTimelineController: UITextViewDelegate {
     func textViewDidEndEditing (_ textView: UITextView) {
         if timelineTextView.text.isEmpty || timelineTextView.text == "" {
             timelineTextView.textColor = .lightGray
-            timelineTextView.text = "What's new?"
+            timelineTextView.text = "What's new? start typing here..."
         }
     }
 }

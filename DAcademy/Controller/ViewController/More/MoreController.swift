@@ -27,12 +27,17 @@ extension MoreController: UITableViewDelegate {
             performSegue(withIdentifier: "toProfile", sender: self)
         }
         if indexPath.section == 2 {
-            currentLogin.removeKeyForLogin(key: "username")
-            
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewController = storyBoard.instantiateViewController(withIdentifier: "loginScreen") as! LoginController
-            newViewController.modalPresentationStyle = .fullScreen
-            self.present(newViewController, animated: true, completion: nil)
+            let logOutAlert = UIAlertController(title: "Logout Prompt", message: "Are you sure you want to log out?", preferredStyle: .alert)
+            logOutAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            logOutAlert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { UIAlertAction in
+                currentLogin.removeKeyForLogin(key: "username")
+                
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "loginScreen") as! LoginController
+                newViewController.modalPresentationStyle = .fullScreen
+                self.present(newViewController, animated: true, completion: nil)
+            }))
+            self.present(logOutAlert, animated: true)
         }
     }
 }
