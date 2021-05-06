@@ -18,3 +18,10 @@ struct Timeline {
         self.content = content
     }
 }
+
+struct TimelineDatabase {
+    var timelineData = [Timeline]()
+}
+
+var timelineDatabase = TimelineDatabase()
+

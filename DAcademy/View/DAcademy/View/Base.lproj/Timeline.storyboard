@@ -127,7 +127,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="timelineCollectionView" destination="WLP-pO-rM4" id="Swq-zo-Jf3"/>
-                        <segue destination="Qdo-46-ETV" kind="presentation" identifier="toNewTimeline" id="E2m-hV-X3o"/>
+                        <segue destination="Qdo-46-ETV" kind="show" identifier="toNewTimeline" id="E2m-hV-X3o"/>
                         <segue destination="uUT-c2-REP" kind="show" identifier="toTimelineDetail" id="pZy-lA-Ctp"/>
                     </connections>
                 </viewController>
@@ -213,10 +213,28 @@
             <objects>
                 <viewController id="7t1-L1-7ig" customClass="NewTimelineController" customModule="DAcademy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mpo-rP-HnW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RAH-FA-Exb">
+                                <rect key="frame" x="20" y="108" width="374" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7t1-L1-7ig" id="bvH-Fp-ayP"/>
+                                </connections>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="lUy-bh-fSG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RAH-FA-Exb" firstAttribute="bottom" secondItem="lUy-bh-fSG" secondAttribute="bottom" constant="20" id="LVF-yJ-CeA"/>
+                            <constraint firstItem="lUy-bh-fSG" firstAttribute="trailing" secondItem="RAH-FA-Exb" secondAttribute="trailing" constant="20" id="ZnC-Pj-PzU"/>
+                            <constraint firstItem="RAH-FA-Exb" firstAttribute="leading" secondItem="lUy-bh-fSG" secondAttribute="leading" constant="20" id="hU9-Ph-M3f"/>
+                            <constraint firstItem="RAH-FA-Exb" firstAttribute="top" secondItem="lUy-bh-fSG" secondAttribute="top" constant="20" id="t30-bT-AQ0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Timeline" id="sZu-go-P7N">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="6Xn-DI-Dib">
@@ -230,6 +248,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="timelineTextView" destination="RAH-FA-Exb" id="2fs-tN-yJd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jc0-e6-oKI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -257,18 +278,22 @@
         <!--Navigation Controller-->
         <scene sceneID="ekz-ig-CGZ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vr2-9X-KYc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qdo-46-ETV" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Hs7-T6-9As"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6cC-r6-StE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UXh-2d-eiZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="7t1-L1-7ig" kind="relationship" relationship="rootViewController" id="LZS-nY-Ygq"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vr2-9X-KYc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4621.739130434783" y="-836.38392857142856"/>
         </scene>
@@ -277,6 +302,9 @@
         <image name="clock.fill" catalog="system" width="128" height="121"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

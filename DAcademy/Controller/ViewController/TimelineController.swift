@@ -10,22 +10,28 @@ import UIKit
 class TimelineController: UIViewController {
     @IBOutlet weak var timelineCollectionView: UICollectionView!
     
-    var timelineData = [Timeline]()
-    
     var tempName = ""
     var tempDate = ""
     var tempContent = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        timelineData.append(Timeline(name: "Kevin Jonathan",
-                                     date: "17:30 PM - 6 April 2021",
-                                     content: "Today, I have learnt about how to use AVFoundation framework. It is very interesting because I can play and record my voice using the AVRecorder and AVPlayer, cool! I learnt about this framework using Stackoverflow and Apple’s Documentation. With AVRecorder, we can just use .start(), .pause(), stop() to manage the recording session. It is not that hard whatsoever to implement this in our projects."))
-        timelineData.append(Timeline(name: "Kevin Jonathan",
-                                     date: "19:30 PM - 21 Maret 2021",
+        timelineDatabase.timelineData.append(Timeline(name: "Kevin Jonathan",
+                                     date: "19:30 - 21 Maret 2021",
                                      content: "Today, I have learnt about how to use UIKit framework. I struggled at first but I started to get the hang of it! I guess? But anyway, I want to share my experience in this timeline that Swift is relatively easy? I am not sure to be honest."))
+        timelineDatabase.timelineData.append(Timeline(name: "Kevin Jonathan",
+                                     date: "17:30 - 6 April 2021",
+                                     content: "Today, I have learnt about how to use AVFoundation framework. It is very interesting because I can play and record my voice using the AVRecorder and AVPlayer, cool! I learnt about this framework using Stackoverflow and Apple’s Documentation. With AVRecorder, we can just use .start(), .pause(), stop() to manage the recording session. It is not that hard whatsoever to implement this in our projects."))
+        
+        timelineDatabase.timelineData = timelineDatabase.timelineData.reversed()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        timelineCollectionView.reloadData()
+    }
+    
     @IBAction func addNewTimeline(_ sender: Any) {
         performSegue(withIdentifier: "toNewTimeline", sender: self)
     }
@@ -36,12 +42,16 @@ class TimelineController: UIViewController {
             vc.date = tempDate
             vc.content = tempContent
         }
+        if segue.identifier == "toNewTimeline" {
+            //let vc2 = segue.destination as! NewTimelineController
+            //vc2.delegate = self
+        }
     }
     
     @objc func timelineDetailOnClick(sender: UIButton!) {
-        tempName = timelineData[sender.tag].name
-        tempDate = timelineData[sender.tag].date
-        tempContent = timelineData[sender.tag].content
+        tempName = timelineDatabase.timelineData[sender.tag].name
+        tempDate = timelineDatabase.timelineData[sender.tag].date
+        tempContent = timelineDatabase.timelineData[sender.tag].content
         performSegue(withIdentifier: "toTimelineDetail", sender: self)
     }
     
@@ -49,7 +59,7 @@ class TimelineController: UIViewController {
         let myActionSheet =  UIAlertController(title: "Timeline Option", message: "Button for timeline option", preferredStyle: UIAlertController.Style.actionSheet)
         myActionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
         myActionSheet.addAction(UIAlertAction(title: "Delete", style: UIAlertAction.Style.destructive, handler: { (ACTION :UIAlertAction!) in
-            self.timelineData.remove(at: sender.tag)
+            timelineDatabase.timelineData.remove(at: sender.tag)
             self.timelineCollectionView.reloadData()
         }))
         self.present(myActionSheet, animated: true, completion: nil)
@@ -64,15 +74,15 @@ extension TimelineController: UICollectionViewDelegate {
 
 extension TimelineController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return timelineData.count
+        return timelineDatabase.timelineData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = timelineCollectionView.dequeueReusableCell(withReuseIdentifier: "timelineCell", for: indexPath) as! TimelineCollectionViewCell
         
-        cell.timelineName.text = timelineData[indexPath.item].name
-        cell.timelineDate.text = timelineData[indexPath.item].date
-        cell.timelineContent.text = timelineData[indexPath.item].content
+        cell.timelineName.text = timelineDatabase.timelineData[indexPath.item].name
+        cell.timelineDate.text = timelineDatabase.timelineData[indexPath.item].date
+        cell.timelineContent.text = timelineDatabase.timelineData[indexPath.item].content
         cell.timelineImage.layer.cornerRadius = 25
         cell.timelineDetailButton.addTarget(self, action: #selector(timelineDetailOnClick), for: .touchUpInside)
         cell.timelineDetailButton.tag = indexPath.item
@@ -80,5 +90,12 @@ extension TimelineController: UICollectionViewDataSource {
         cell.timelineButton.tag = indexPath.item
         
         return cell
+    }
+}
+extension TimelineController: doneDelegate {
+    func reloadCollectionView(data: String) {
+        if data == "true" {
+            timelineCollectionView.reloadData()
+        }
     }
 }
