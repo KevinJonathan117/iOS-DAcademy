@@ -27,18 +27,19 @@ class NewTimelineController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
-        let newTimeline = Timeline(name: "Kevin Jonathan", date: "7:30 - 6 May 2021", content: timelineTextView.text)
-        timelineDatabase.timelineData = timelineDatabase.timelineData.reversed()
-        timelineDatabase.timelineData.append(newTimeline)
-        timelineDatabase.timelineData = timelineDatabase.timelineData.reversed()
-        
-        print(timelineDatabase.timelineData)
-        
-        let setReload = "true"
-        
-        delegate?.reloadCollectionView(data: setReload)
+        let trimmed = timelineTextView.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmed != "What's new? start typing here..." && trimmed != "" {
+            let newTimeline = Timeline(name: "Kevin Jonathan", date: "7:30 - 6 May 2021", content: trimmed)
+            timelineDatabase.timelineData = timelineDatabase.timelineData.reversed()
+            timelineDatabase.timelineData.append(newTimeline)
+            timelineDatabase.timelineData = timelineDatabase.timelineData.reversed()
+            
+            let setReload = "true"
+            
+            delegate?.reloadCollectionView(data: setReload)
 
-        navigationController?.popViewController(animated: true)
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
